@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.ApplicationModel.Search;
+using Windows.UI.ApplicationSettings;
 using Windows.UI.Notifications;
+using Windows.UI.Xaml.Media.Imaging;
 using TheHiddenTruth.Store.Common;
 
 using System;
@@ -24,6 +26,7 @@ using Windows.UI.Xaml.Navigation;
 using TheHiddenTruth.Store.View;
 using NotificationsExtensions.TileContent;
 using Parse;
+using TheHiddenTruth.Store.View.Settings;
 
 namespace TheHiddenTruth.Store
 {
@@ -39,7 +42,7 @@ namespace TheHiddenTruth.Store
         public App()
         {
             this.InitializeComponent();
-            App.Current.RequestedTheme = ApplicationTheme.Light;
+            //App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
             ParseClient.Initialize("uitRZ57uZs6MSj0NJky0HpUTsjgnZz4WHtJGpxou", "XKwGODuZLB8efwOIJrN5OwcQcJCHxYpgPmr3ghFz");
         }
@@ -60,6 +63,7 @@ namespace TheHiddenTruth.Store
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
+
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -100,6 +104,11 @@ namespace TheHiddenTruth.Store
                     throw new Exception("Failed to create initial page");
                 }
             }
+            ImageBrush brush = new ImageBrush();
+            BitmapImage image = new BitmapImage(new Uri("ms-appx:///Assets/Images/Globe.jpg"));
+            brush.ImageSource = image;
+            rootFrame.Background = brush;
+
             // Ensure the current window is active
             Window.Current.Activate();
         }
@@ -120,10 +129,21 @@ namespace TheHiddenTruth.Store
 
         protected override async void OnWindowCreated(WindowCreatedEventArgs args)
         {
-            
-            base.OnWindowCreated(args);
+            SettingsPane.GetForCurrentView().CommandsRequested += (s, e) =>
+            {
+                var defaultsCommand = new SettingsCommand("privacyPolicy", "Декларация за поверителност",
+                    (handler) =>
+                    {
+                        var ppSetting = new PrivacyPolicy();
+                        ppSetting.Show();
+                    });
+                e.Request.ApplicationCommands.Add(defaultsCommand);
+            };
+
             SearchPane.GetForCurrentView().ShowOnKeyboardInput = true;
             SearchPane.GetForCurrentView().QuerySubmitted += App_QuerySubmitted;
+
+            base.OnWindowCreated(args);
 
             //TileUpdateManager.CreateTileUpdaterForApplication().Clear();
             //TileUpdateManager.CreateTileUpdaterForApplication().EnableNotificationQueue(true);

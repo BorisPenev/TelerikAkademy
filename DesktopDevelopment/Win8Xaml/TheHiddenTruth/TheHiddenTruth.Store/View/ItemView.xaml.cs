@@ -176,9 +176,12 @@ namespace TheHiddenTruth.Store.View
             var ds = this.DataContext as ItemViewModel;
             if (ds != null)
             {
-                e.PageState["SelectedItem"] = ds.SelectedItem.Id;
-                var result = await JsonConvert.SerializeObjectAsync(ServiceManager.Sites);
-                await StringIOExtensions.WriteToFile(result, "data.txt");
+                if (ds.SelectedItem != null)
+                {
+                    e.PageState["SelectedItem"] = ds.SelectedItem.Id;
+                    var result = await JsonConvert.SerializeObjectAsync(ServiceManager.Sites);
+                    await StringIOExtensions.WriteToFile(result, "data.txt");
+                }
             }
         }
 

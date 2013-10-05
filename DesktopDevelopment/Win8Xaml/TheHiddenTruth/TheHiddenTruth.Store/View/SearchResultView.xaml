@@ -32,8 +32,8 @@
             </Grid>
         </AppBar>
     </Page.TopAppBar>
-    
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid><!--Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"-->
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>

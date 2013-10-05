@@ -70,8 +70,9 @@
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
+     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    <Grid
         DataContext="{Binding CurrentPage}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -213,7 +214,7 @@
                      * Adjust padding for details
                  -->
                 <VisualState x:Name="SinglePane_Detail">
-                    <Storyboard>
+                    <!--<Storyboard>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="primaryColumn" Storyboard.TargetProperty="Width">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="0"/>
                         </ObjectAnimationUsingKeyFrames>
@@ -235,7 +236,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemDetail" Storyboard.TargetProperty="Padding">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="120,0,90,0"/>
                         </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
+                    </Storyboard>-->
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
