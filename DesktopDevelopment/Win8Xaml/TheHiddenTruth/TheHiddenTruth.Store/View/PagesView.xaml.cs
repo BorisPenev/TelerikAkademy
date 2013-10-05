@@ -63,8 +63,11 @@ namespace TheHiddenTruth.Store.View
             if (e.PageState != null && e.PageState.ContainsKey("CurrentSite"))
             {
                 var result = await StringIOExtensions.ReadFromFile("data.txt");
-                var re = await JsonConvert.DeserializeObjectAsync<ObservableCollection<SiteModel>>(result);
-                ServiceManager.Sites = re;
+                var json = await JsonConvert.DeserializeObjectAsync<ObservableCollection<SiteModel>>(result);
+                if (json != null)
+                {
+                    ServiceManager.Sites = json;
+                }
                 var ds = this.DataContext as PageViewModel;
                 if (ds != null)
                 {
@@ -86,9 +89,7 @@ namespace TheHiddenTruth.Store.View
                     await ds.LoadData(e.NavigationParameter.ToString(), null);
                 }
             }
-
         }
-
 
         /// <summary>
         ///     Preserves state associated with this page in case the application is suspended or the
@@ -136,6 +137,7 @@ namespace TheHiddenTruth.Store.View
             {
                 ds.CurrentSite.SelectedIndex = PnlPivot.SelectedIndex;
             }
+            
             _navigationHelper.OnNavigatedFrom(e);
         }
 

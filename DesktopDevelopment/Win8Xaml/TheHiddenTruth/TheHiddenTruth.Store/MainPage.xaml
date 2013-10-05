@@ -42,6 +42,11 @@
         </AppBar>
     </Page.TopAppBar>
 
+    <!--<Page.Transitions>
+        <TransitionCollection>
+            <ContentThemeTransition HorizontalOffset="0" VerticalOffset="0"/>
+        </TransitionCollection>
+    </Page.Transitions>-->
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title

@@ -36,7 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Helpers\DynamicDictionary.cs" />
     <Compile Include="Helpers\WebContentHelper.cs" />
     <Compile Include="Services\INavigationService.cs" />
     <Compile Include="Model\AlterInformation\RootObject.cs" />

@@ -127,7 +127,11 @@ namespace TheHiddenTruth.Store.View
             if (e.PageState != null && e.PageState.ContainsKey("SelectedItem"))
             {
                 var result = await StringIOExtensions.ReadFromFile("data.txt");
-                ServiceManager.Sites = await JsonConvert.DeserializeObjectAsync<ObservableCollection<SiteModel>>(result);
+                var json = await JsonConvert.DeserializeObjectAsync<ObservableCollection<SiteModel>>(result);
+                if (json != null)
+                {
+                    ServiceManager.Sites = json;
+                } 
                 var ds = this.DataContext as ItemViewModel;
                 if (ds != null)
                 {
