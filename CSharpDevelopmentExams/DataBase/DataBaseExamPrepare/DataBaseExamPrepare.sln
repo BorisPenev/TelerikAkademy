@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseExamPrepare.Data", "DataBaseExamPrepare.Data\DataBaseExamPrepare.Data.csproj", "{03D019C1-BDB8-4120-BF0C-A5F3842090DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarkImporter", "BookmarkImporter\BookmarkImporter.csproj", "{0FB250A8-7187-4B46-886C-94E31A82686D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkDataGenerator", "BulkDataGenerator\BulkDataGenerator.csproj", "{869CC6D8-A899-4533-91E0-5C05B90C0568}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03D019C1-BDB8-4120-BF0C-A5F3842090DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D019C1-BDB8-4120-BF0C-A5F3842090DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D019C1-BDB8-4120-BF0C-A5F3842090DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D019C1-BDB8-4120-BF0C-A5F3842090DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FB250A8-7187-4B46-886C-94E31A82686D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FB250A8-7187-4B46-886C-94E31A82686D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FB250A8-7187-4B46-886C-94E31A82686D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FB250A8-7187-4B46-886C-94E31A82686D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869CC6D8-A899-4533-91E0-5C05B90C0568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869CC6D8-A899-4533-91E0-5C05B90C0568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869CC6D8-A899-4533-91E0-5C05B90C0568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869CC6D8-A899-4533-91E0-5C05B90C0568}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

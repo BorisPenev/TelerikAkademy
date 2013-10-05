@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="marks-template">	
+			<ul>
+				{{#.}} 
+					<li>
+						{{Subject}}: <strong>{{Score}}</strong>							
+					</li>
+				{{/.}}
+				{{^.}}	   
+					<li>
+						This student has no marks, yet	  						
+					</li>
+				{{/.}}
+			</ul>			
+    </script>
+    
+    <div id="marks"></div>
+
+</body>
+</html>

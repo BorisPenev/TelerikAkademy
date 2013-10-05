@@ -1,0 +1,8 @@
+﻿7
+20
+words, and, to a lesser extent,
+ between glyphs or letters, are stretched or compressed to align 
+ both the left and right ends                 of each line of text. When using justification
+ , it is customary to treat the last line of a paragraph separately by 
+ simply left or                right aligning it, depending on the language direction. 
+ Lines in which the spaces have been stretched beyond their normal widt

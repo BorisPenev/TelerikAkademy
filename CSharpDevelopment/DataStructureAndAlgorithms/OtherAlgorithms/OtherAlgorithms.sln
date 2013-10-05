@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoinProblem", "CoinProblem\CoinProblem.csproj", "{BFD70730-DF7A-4F68-A4DB-7DEC2ECE47ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointInTriangle", "PointInTriangle\PointInTriangle.csproj", "{CE28A9E7-8932-4302-B6BE-92DDA1FA158C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimizeTheCostForCables", "MinimizeTheCostForCables\MinimizeTheCostForCables.csproj", "{99AFB56C-53EF-4029-8C2A-862E612627E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFD70730-DF7A-4F68-A4DB-7DEC2ECE47ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD70730-DF7A-4F68-A4DB-7DEC2ECE47ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD70730-DF7A-4F68-A4DB-7DEC2ECE47ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD70730-DF7A-4F68-A4DB-7DEC2ECE47ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE28A9E7-8932-4302-B6BE-92DDA1FA158C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE28A9E7-8932-4302-B6BE-92DDA1FA158C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE28A9E7-8932-4302-B6BE-92DDA1FA158C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE28A9E7-8932-4302-B6BE-92DDA1FA158C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AFB56C-53EF-4029-8C2A-862E612627E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AFB56C-53EF-4029-8C2A-862E612627E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AFB56C-53EF-4029-8C2A-862E612627E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AFB56C-53EF-4029-8C2A-862E612627E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

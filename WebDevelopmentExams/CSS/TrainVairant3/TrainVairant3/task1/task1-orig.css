@@ -1,0 +1,93 @@
+﻿body{
+font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+font-size: 16px;
+}
+ul{
+margin:0;
+padding:0;
+}
+.msg-bar
+{
+position:absolute;
+top:205px;
+left:50px;
+}
+.msg-bar li{
+display:inline-block;
+}
+.msg-bar li a
+{
+display:inline-block;
+padding:10px 15px;
+text-decoration:none;
+color:black;
+font-size: 16px;
+background: #aaffef; /* Old browsers */
+background: -moz-linear-gradient(top,  #aaffef 0%, #20ffd5 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aaffef), color-stop(100%,#20ffd5)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #aaffef 0%,#20ffd5 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #aaffef 0%,#20ffd5 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #aaffef 0%,#20ffd5 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #aaffef 0%,#20ffd5 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aaffef', endColorstr='#20ffd5',GradientType=0 ); /* IE6-9 */
+
+border:1px solid black;
+color:#0094FF;
+}
+.msg-bar li a:hover +.msg-bar-content
+{
+display:block;
+}
+.msg-bar li a:hover{
+border-top:5px solid #AAFFEF;
+margin-top:-5px;
+background:#00DDB3;
+}
+.msg-bar-content{
+position:absolute;
+left:0px;
+top:-164px;
+ display:none;/*background image na user*/
+ width:432px;
+ height:140px;
+background-color:#AAFFEF;
+border:1px solid black;
+color:#0094FF;
+border-bottom:none;
+padding:10px 15px;
+ border-top-left-radius:10px;
+ border-top-right-radius:10px;
+}
+.msg-bar-content .me-item,.msg-bar-content .other-item{
+display:block;
+margin-bottom:5px;
+}
+
+.msg-bar-content .me-item > span,.msg-bar-content .other-item > span
+{
+text-align:right;
+position:absolute;
+left:115px;
+border-bottom:1px solid black;
+}
+.msg-bar-content .me-item .user,.msg-bar-content .other-item .user
+{
+position:relative;
+left:0px;
+display:inline-block;
+border:1px solid black;
+padding:5px 10px;
+border-radius:10px;
+}
+.msg-bar-content .me-item .user
+{
+background:url('imgs/me.png') no-repeat;
+background-position:2px;
+padding-left:20px;
+}
+.msg-bar-content .other-item .user
+{
+background:url('imgs/male.png') no-repeat;
+background-position:2px;
+padding-left:20px;
+}

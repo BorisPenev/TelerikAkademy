@@ -1,0 +1,41 @@
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+#pnlMain {
+	display: -ms-grid;
+	-ms-grid-row: 2;
+}
+
+#pnlPostForm {
+	display: -ms-grid;
+	-ms-grid-columns: 200px 200px;
+	-ms-grid-rows: auto;
+	-ms-grid-row: 2;
+	height: 400px;
+}
+
+#btnSend {
+	-ms-grid-column: 2;
+	-ms-grid-row: 5;
+	width:200px;
+}
+
+#pnlPosts {
+	-ms-grid-row: 3;
+}

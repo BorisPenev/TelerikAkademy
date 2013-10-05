@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/pages/home/home.js"></script>
+	<script type="text/javascript">WinJS.UI.processAll();</script>
+</head>
+<body>
+	<div id="listViewGroupHeader" data-win-control="WinJS.Binding.Template">
+		<div>
+			<div data-win-bind="textContent:manufacturer"></div>
+		</div>
+	</div>
+	<div id="listViewItemTmplate" data-win-control="WinJS.Binding.Template">
+		<div class="listViewItem">
+			<img id="imgItem" src="/image/Microsoft.VisualStudio.Blend.Html.Intrinsic.Img.png" data-win-bind="src:imageUrl">
+			<div>
+				<div data-win-bind="textContent:name BindingHelpers.fillStringTemplate">Name: {value}</div>
+				<div data-win-bind="textContent:price BindingHelpers.fillStringTemplate">Price: {value}</div>
+				<div data-win-bind="textContent:processor.modelName BindingHelpers.fillStringTemplate">CPU Model: {value}</div>
+				<div data-win-bind="textContent:processor.frequencyGHz BindingHelpers.fillStringTemplate">CPU GHz: {value}</div>
+			</div>
+		</div>
+	</div>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to DataBinding!</span>
+            </h1>
+        </header>
+        <section id="pnlMain" aria-label="Main content" role="main">
+            <div id="pnlCreateComputer">
+                Name: <input id="txtName" type="text"/><br/>
+                Price: <input id="txtPrice" type="text"/><br/>
+                Image: <input id="txtImage" type="text"/><br/>
+                Processor Model Name: <input id="txtModelName" type="text"/><br/>
+                Processor Frequency GHz: <input id="txtFrequencyGHz" type="text"/><br/>
+                Manufacturer: <input id="txtManufacturer" type="text"/><br/>
+                <button id="btnSave">Save</button>
+            </div>
+        	<div id="grdListView" data-win-control="WinJS.UI.ListView" data-win-options="{groupHeaderTemplate:select('#listViewGroupHeader'), itemTemplate:select('#listViewItemTmplate'), layout:{type:WinJS.UI.GridLayout}, scrollPosition:0}"></div>
+        </section>
+    </div>
+</body>
+</html>

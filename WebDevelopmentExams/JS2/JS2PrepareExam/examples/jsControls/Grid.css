@@ -1,0 +1,57 @@
+﻿.gridJS
+{
+    width: 100%; 
+    background-color: #fff; 
+    margin: 5px 0 10px 0; 
+    border: solid 1px #525252; 
+    border-collapse:collapse;     
+}
+
+.gridJS td 
+{
+    padding: 2px;
+    border: solid 1px #c1c1c1;
+    color: Black;
+    font-size: 1.1em;     
+}
+
+.gridJS th 
+{
+    padding: 4px 2px; 
+    /*color: #fff;    */
+    background-color: #4b6c9e;        /*   #d3d3d3 */
+    /*background: #ffffff url(grd_head.png) repeat-x top;
+    background: #000077 url(grd_head.png) repeat-x top;  */   
+    border-left: solid 1px #525252; 
+    font-size: 1.3em; 
+}
+
+.gridJS .alt 
+{ 
+    background: #fcfcfc url(grd_alt.png) repeat-x top;
+}
+
+.gridJS .pgr 
+{
+    background: #424242 url(grd_pgr.png) repeat-x top; 
+}
+
+.gridJS .pgr table { margin: 5px 0; }
+.gridJS .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #fff; line-height: 12px; }   
+.gridJS .pgr a { color: #666; text-decoration: none; }
+.gridJS .pgr a:hover { color: #000; text-decoration: none; }
+
+/*.gridJS:hover
+{
+    cursor: pointer;
+}*/
+
+.gridJS .selected 
+{ 
+    background-color: Lime;
+}
+
+.gridJS .groupHighlight 
+{ 
+    background-color: #B9D0F8;
+}

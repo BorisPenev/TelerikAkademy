@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<search-results>
+  <result-set>
+    <bookmark>
+      <username>peter</username>
+      <title>Intro C# Book</title>
+      <url>http://www.introprogramming.info/intro-csharp-book/</url>
+      <tags>algorithms, book, c#, data-structures, nakov, programming</tags>
+      <notes>Fundamental book of programming. A must read!</notes>
+    </bookmark>
+    <bookmark>
+      <username>peter</username>
+      <title>Nakov's books</title>
+      <url>http://www.nakov.com/books/</url>
+      <tags>book, nakov, programming</tags>
+    </bookmark>
+  </result-set>
+  <result-set>
+    <bookmark>
+      <username>peter</username>
+      <title>Nakov's books</title>
+      <url>http://www.nakov.com/books/</url>
+      <tags>book, nakov, programming</tags>
+    </bookmark>
+  </result-set>
+  <result-set />
+  <result-set>
+    <bookmark>
+      <username>maria</username>
+      <title>Telerik Academy</title>
+      <url>http://academy.telerik.com</url>
+      <tags />
+    </bookmark>
+  </result-set>
+  <result-set>
+    <bookmark>
+      <username>todor</username>
+      <title>HTML 5 Demos and Examples</title>
+      <url>http://html5demos.com</url>
+      <tags>css, css3, html, html5, web, web development</tags>
+    </bookmark>
+    <bookmark>
+      <username>peter</username>
+      <title>Intro C# Book</title>
+      <url>http://www.introprogramming.info/intro-csharp-book/</url>
+      <tags>algorithms, book, c#, data-structures, nakov, programming</tags>
+      <notes>Fundamental book of programming. A must read!</notes>
+    </bookmark>
+    <bookmark>
+      <username>peter</username>
+      <title>Nakov's books</title>
+      <url>http://www.nakov.com/books/</url>
+      <tags>book, nakov, programming</tags>
+    </bookmark>
+  </result-set>
+</search-results>

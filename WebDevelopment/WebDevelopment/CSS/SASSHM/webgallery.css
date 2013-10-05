@@ -1,0 +1,19 @@
+#simple-web-gallery nav ul li {
+  list-style: none;
+  display: inline-block; }
+  #simple-web-gallery nav ul li .thubnail {
+    width: 160px; }
+
+.images-container {
+  postion: relative; }
+  .images-container input[type="radio"] {
+    display: none; }
+    .images-container input[type="radio"]:checked + .image {
+      opacity: 1; }
+  .images-container .image {
+    width: 480px;
+    opacity: 0;
+    display: inline-block;
+    position: absolute;
+    left: 106px; }
+

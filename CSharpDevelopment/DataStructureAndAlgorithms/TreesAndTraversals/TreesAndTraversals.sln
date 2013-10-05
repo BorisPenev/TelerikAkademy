@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeNode", "TreeNode\TreeNode.csproj", "{D94E77B2-D0FD-4205-88FE-09978748F45B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindFilesInFolders", "FindFilesInFolders\FindFilesInFolders.csproj", "{7323A712-5F0A-4124-90F3-115E595667D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D94E77B2-D0FD-4205-88FE-09978748F45B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D94E77B2-D0FD-4205-88FE-09978748F45B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D94E77B2-D0FD-4205-88FE-09978748F45B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D94E77B2-D0FD-4205-88FE-09978748F45B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7323A712-5F0A-4124-90F3-115E595667D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7323A712-5F0A-4124-90F3-115E595667D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7323A712-5F0A-4124-90F3-115E595667D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7323A712-5F0A-4124-90F3-115E595667D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

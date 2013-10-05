@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        var MAX_SCORE_RESULT = 5;
+        var trashCount = 0;
+        var totalSeconds = 0;
+        var pnlTimerCount;
+        var refreshIntervalId;
+        
+        function StartNewGame() {
+            pnlTimerCount = document.getElementById('pnlTimerCount');
+            createRandomTrash();
+            createBucket();
+        }
+
+        function createBucket() {
+            var bucket = document.createElement('div');
+            bucket.id = 'bucket';
+            bucket.style.width = '210px';
+            bucket.style.height = '210px';
+            bucket.style.position = 'absolute';
+            IsBucketOpen(bucket, false);
+            bucket.style.backgroundRepeat = 'no-repeat';
+            bucket.style.top = '30px';
+            bucket.style.left = '30px';
+            bucket.addEventListener('dragover', dragoverEvent, false);
+            bucket.addEventListener('dragleave', dragleaveEvent, false);
+            bucket.addEventListener('drop', dropEvent, false);
+            document.body.appendChild(bucket);
+        }
+
+        function dragleaveEvent(ev) {
+            IsBucketOpen(this, false);
+        }
+
+        function dragoverEvent(ev) {
+            ev.preventDefault();
+            IsBucketOpen(this, true);
+        }
+
+        function dropEvent(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            document.body.removeChild(document.getElementById(data));
+            IsBucketOpen(this, false);
+            if (refreshIntervalId === undefined) {
+                refreshIntervalId = setInterval(function () {
+                    ++totalSeconds;
+                    pnlTimerCount.innerHTML = totalSeconds;
+                }, 1);
+            }
+            trashCount--;
+            if (trashCount === 0) {
+                clearInterval(refreshIntervalId);
+                OpenScoreWindow();
+            }
+        }
+
+        function IsBucketOpen(bucket, isOpen) {
+            if (isOpen) {
+                bucket.style.backgroundImage = "url('Images/bucketOpen.jpg')";
+            } else {
+                bucket.style.backgroundImage = "url('Images/bucketClose.jpg')";
+            }
+        }
+        
+        function createRandomTrash() {
+            for (var i = 0; i < randomNumber(2,10); i++) {
+                var trash = document.createElement('div');
+                trash.id = 'trash' +i;
+                trash.style.width = '30px';
+                trash.style.height = '30px';
+                trash.style.position = 'absolute';
+                trash.style.backgroundImage = "url('Images/trash.jpg')";
+                trash.style.top = randomNumber(300, 600) + 'px';
+                trash.style.left = randomNumber(300, 600) + 'px';
+                trash.draggable = true;
+                trash.addEventListener('dragstart', startDrag, false);
+                document.body.appendChild(trash);
+                trashCount++;
+            }
+        }
+        
+        function startDrag(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        
+        function OpenScoreWindow() {
+            document.getElementById('light1').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+        }
+        function CloseScoreWindow() {
+            document.getElementById('light1').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+
+        function btnAddUserName_Clicked() {
+            var txtUserName = document.getElementById('txtUserName');
+            if (txtUserName != null) {
+                var text = txtUserName.value;
+                localStorage.setItem(totalSeconds, text);
+            }
+            printScores();
+        }
+
+        function printScores() {
+            var scores = [];
+            var i;
+            for (i = 0; i < localStorage.length; i++) {
+                scores.push(localStorage.key(i));
+            }
+            scores.sort(function (a, b) { return a - b });
+            
+            var pnlScores = document.getElementById('pnlScores');
+            while (pnlScores.firstChild) {
+                pnlScores.removeChild(pnlScores.firstChild);
+            }
+            
+            var ul = document.createElement('li');
+            for (i = 0; i < scores.length; i++) {
+                if (i < MAX_SCORE_RESULT) {
+                    var userName = localStorage.getItem(scores[i]);
+                    var li = document.createElement('li');
+                    li.innerHTML = i + 1 + ". " + userName + " " + scores[i];
+                    ul.appendChild(li);
+                }
+            }
+            
+            pnlScores.appendChild(ul);
+        }
+        
+    </script>
+    <style>
+        
+        .black_overlay{
+               display: none;
+               position:fixed;
+               top: 0%;
+               left: 0%;
+               width: 100%;
+               height: 100%;
+               background-color: #000000;
+               z-index:1;
+               -moz-opacity: 0.8;
+               opacity:.80;
+               filter: alpha(opacity=80);
+}
+        .wcontent {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 15%;
+            width: 700px;
+            min-height: 200px;
+            padding: 5px;
+            border: 1px solid #FF8410;
+            background-color: #fff;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            z-index: 120000;
+            color: #000;
+        }
+        #pnlAddName {
+            text-align: center;
+        }
+    </style>
+</head>
+    <body onload="StartNewGame()">
+        <div id="pnlTimerCount"></div>
+        <div id="light1" class="wcontent">
+            <div id="pnlAddName">
+                Please write your username: <input id="txtUserName" type="text"/> <input id="btnAddUserName" type="button" value="Save" onclick="btnAddUserName_Clicked()"/>
+            </div>
+            <div id="pnlScores"></div>
+        </div>
+ 
+        <div id="fade" class="black_overlay"></div>
+    </body>
+</html>

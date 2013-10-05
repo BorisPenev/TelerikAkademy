@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>groupedItemsPage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="stylesheet.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/groupedItems/groupedItems.js"></script>
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headertemplate" data-win-control="WinJS.Binding.Template">
+        <button class="group-header win-type-x-large win-type-interactive" data-win-bind="groupKey: key"
+            onclick="Application.navigator.pageControl.navigateToGroup(event.srcElement.groupKey)" role="link" tabindex="-1" type="button">
+            <span class="group-title win-type-ellipsis" data-win-bind="textContent: title"></span>
+            <span class="group-chevron"></span>
+        </button>
+    </div>
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item">
+            <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+            <div class="item-overlay">
+                <h4 class="item-title" data-win-bind="textContent: title"></h4>
+                <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: subtitle"></h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment groupeditemspage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Darth Vader</span>
+            </h1>
+        </header>
+        <section class="currentGrid" aria-label="Main content" role="main">
+            <div class="main-description">
+                <div class="itemdetailpage">
+                    <div class="content">
+                        <article>
+                            <div>
+                                <img class="item-image" src="http://upload.wikimedia.org/wikipedia/en/thumb/7/76/Darth_Vader.jpg/240px-Darth_Vader.jpg" />
+                                <div class="item-content">
+                                    Darth Vader (born Anakin Skywalker) is the central character of the Star Wars saga,[1][2][3] appearing as one of the main antagonists of the original trilogy and as one of the main protagonists of the prequel trilogy.<br /><br />
+                                    The character was created by George Lucas and numerous actors have portrayed him. His appearances span all six Star Wars films, and he is an important character in the expanded universe of television series, video games, novels, literature and comic books. The films establish that he was originally a Jedi who was part depicted in the prophecy of being the Chosen One by restoring balance to the Force but fell to the dark side of the Force;[4] he is also the father of both Luke Skywalker and Princess Leia, the two of the main protagonists of the original trilogy.
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="listview">
+                <div class="groupeditemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

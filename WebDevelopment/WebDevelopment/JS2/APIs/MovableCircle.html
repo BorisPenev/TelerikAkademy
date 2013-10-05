@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function startMovement() {
+            var directionTop = 1;
+            var directionLeft = 1;
+            var leftPos = 20;
+            var topPos = 100;
+            var width = window.document.body.offsetWidth;
+            var height = window.document.body.offsetHeight;
+            
+            var ball = document.createElement('ball');
+            ball.style.width = '30px';
+            ball.style.height = '30px';
+            ball.style.backgroundColor = 'red';
+            ball.style.borderRadius = '30px';
+            ball.style.position = 'absolute';
+
+            var wrapper = document.getElementById("wrapper");
+            wrapper.style.width = width;
+            wrapper.style.height = height;
+            wrapper.appendChild(ball);
+
+            setInterval(function () {
+                topPos += directionTop;
+                leftPos += directionLeft;
+                if (topPos == height - 20) {
+                    directionTop *= -1;
+                }
+                if (leftPos == width - 20) {
+                    directionLeft *= -1;
+                }
+                if (topPos == 20) {
+                    directionTop *= -1;
+                }
+                if (leftPos == 20) {
+                    directionLeft *= -1;
+                }
+
+                ball.style.left = leftPos + "px";
+                ball.style.top = topPos + "px";
+            }, 5);
+        }
+        
+    </script>
+</head>
+<body onload="startMovement()">
+    <div id="wrapper"></div>
+</body>
+</html>

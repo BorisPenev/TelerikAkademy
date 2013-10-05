@@ -1,0 +1,30 @@
+body {
+    background-color: #A9A9A9;
+}
+a {
+    color: black;
+    text-decoration:none;
+}
+h1 {
+    color: #FAFAD2;
+}
+body > header, body > footer {
+    text-align: center;
+}
+body > header > h1 {
+    font-size:58px;
+}
+li, ul {
+     list-style-type: none;
+     margin: 0;
+     padding:0;
+}
+.selected {
+    text-decoration:underline;
+}
+nav a {
+    font-weight:bold;
+    font-size:34px;
+    text-decoration:none;
+    color:white;
+}

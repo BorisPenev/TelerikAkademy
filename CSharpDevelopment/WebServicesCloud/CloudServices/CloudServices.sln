@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudServices.DropBox", "CloudServices.DropBox\CloudServices.DropBox.csproj", "{B0937BDA-DEFC-4530-A1A0-0803B9C13F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudServices.PubNubChat", "CloudServices.PubNubChat\CloudServices.PubNubChat.csproj", "{D0DE3BAF-A5DF-4AB6-9A7D-54EF2B90E283}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudServices.IronMQChatter", "CloudServices.IronMQChatter\CloudServices.IronMQChatter.csproj", "{0A67BF61-9215-418F-8898-26996600E11D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0937BDA-DEFC-4530-A1A0-0803B9C13F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0937BDA-DEFC-4530-A1A0-0803B9C13F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0937BDA-DEFC-4530-A1A0-0803B9C13F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0937BDA-DEFC-4530-A1A0-0803B9C13F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0DE3BAF-A5DF-4AB6-9A7D-54EF2B90E283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DE3BAF-A5DF-4AB6-9A7D-54EF2B90E283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DE3BAF-A5DF-4AB6-9A7D-54EF2B90E283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DE3BAF-A5DF-4AB6-9A7D-54EF2B90E283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A67BF61-9215-418F-8898-26996600E11D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A67BF61-9215-418F-8898-26996600E11D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A67BF61-9215-418F-8898-26996600E11D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A67BF61-9215-418F-8898-26996600E11D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

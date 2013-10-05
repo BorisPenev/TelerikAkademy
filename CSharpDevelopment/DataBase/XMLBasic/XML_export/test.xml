@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<students>
+  <student>
+    <name>Gosho Studentcheto                                </name>
+    <sex>Male</sex>
+    <birthdate>1980-10-20T00:00:00</birthdate>
+    <phone>088765432</phone>
+    <email>piyandeto@gmail.com</email>
+    <course>4</course>
+    <specialty>Mathematics</specialty>
+    <faculty-number>1234</faculty-number>
+    <exams>
+      <ExamFormat>
+        <Name>Math</Name>
+        <Tutor>phd Pesho</Tutor>
+        <Score>12.12</Score>
+      </ExamFormat>
+      <ExamFormat>
+        <Name>Singing</Name>
+        <Tutor>Mozart</Tutor>
+        <Score>120.03</Score>
+      </ExamFormat>
+      <ExamFormat>
+        <Name>Running</Name>
+        <Tutor>oiwdfoihfv</Tutor>
+      </ExamFormat>
+    </exams>
+  </student>
+  <student>
+    <name>Pesho Vrytkata                                    </name>
+    <sex>Female</sex>
+    <birthdate>1990-11-10T00:00:00</birthdate>
+    <phone>076543456</phone>
+    <email>ringroad@abv.bg</email>
+    <course>2</course>
+    <specialty>Vrytkane</specialty>
+    <faculty-number>4321</faculty-number>
+    <exams>
+      <ExamFormat>
+        <Name>Singing</Name>
+        <Tutor>Mozart</Tutor>
+        <Score>120.03</Score>
+      </ExamFormat>
+    </exams>
+  </student>
+</students>

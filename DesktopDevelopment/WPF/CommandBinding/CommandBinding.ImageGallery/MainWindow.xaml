@@ -1,0 +1,61 @@
+﻿<Window xmlns:UserControls="clr-namespace:CommandBinding.ImageGallery.UserControls"  x:Class="CommandBinding.ImageGallery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModel="clr-namespace:CommandBinding.ImageGallery.ViewModel"
+        Title="MainWindow" WindowState="Maximized" Name="PnlMainWindow">
+    <Window.DataContext>
+        <viewModel:AlbumViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate x:Key="tabHeaderTemplate">
+            <Grid Width="Auto" Height="Auto">
+                <ContentPresenter ContentSource="Header" Margin="3" 
+                        Content="{Binding Path=Id}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ContentPresenter.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Green"/>
+                        </Style>
+                    </ContentPresenter.Resources>
+                </ContentPresenter>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="tabContentTemplate" DataType="{x:Type viewModel:AlbumViewModel}">
+            <StackPanel DataContext="{Binding ImageModels}">
+                <UserControls:Album />
+            </StackPanel>
+            <!--<ItemsControl Name="Stocks" ItemsSource="{Binding ImageModels}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <UserControls:Album />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>-->
+        </DataTemplate>
+        
+    </Window.Resources>
+    <StackPanel>
+        <TabControl ItemsSource="{Binding AlbumModels}" IsSynchronizedWithCurrentItem="True"
+                    ItemTemplate="{StaticResource tabHeaderTemplate}"
+                    ContentTemplate="{StaticResource tabContentTemplate}"
+                    SelectedItem="{Binding SelectedAlbum}"/>
+        <StackPanel Orientation="Horizontal">
+            <Button Command="{Binding PrevImage}">Previous</Button>
+            <Button Command="{Binding NextImage}">Next</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" DataContext="{Binding NewImage}" HorizontalAlignment="Center">
+            <TextBlock>Image Title</TextBlock>
+            <TextBox Text="{Binding Title}" Width="200"></TextBox>
+            <TextBlock>Image Source</TextBlock>
+            <TextBox Text="{Binding ImageSource}" Width="200"></TextBox>
+            <Button DataContext="{Binding ElementName=PnlMainWindow, Path=DataContext}" Command="{Binding AddNewImage}" Width="200">Add New Image</Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>

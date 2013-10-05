@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/SimulateVehicles.js"></script>
+    <script>
+        
+        //Polzval sam testovete ot reshenieto pusnato vav foruma na kolegata vlad_karamfilov.
+        //JS koda e moje delo.
+        
+        function testVehicle() {
+            //Test the exception in the LandVehicle
+            var wheelArray = [new SimulateVehicles.Wheel(20), new SimulateVehicles.Wheel(20), new SimulateVehicles.Wheel(20), new SimulateVehicles.Wheel(20)];
+            console.log("Wheel:");
+            console.log("radius: " + wheelArray[0].radius);
+            console.log("getAcceleration: " + wheelArray[0].getAcceleration());
+            console.log("Check if it is a PropulsionUnit: " + (wheelArray[0] instanceof SimulateVehicles.PropulsionUnit));
+
+            console.log("</br>Car:");
+            var car = new SimulateVehicles.LandVehicle(10, 20);
+            console.log("Before acceleration:");
+            console.log("speed: " + car.speed);
+            car.accelerate();
+            console.log("After acceleration:");
+            console.log("speed: " + car.speed);
+
+            ////Test the exception in the AirVehicle
+            var propellingNozzleArray = [new SimulateVehicles.PropellingNozzle(50, false)];
+            console.log("</br>PropellingNozzle:");
+            console.log("power: " + propellingNozzleArray[0].power);
+            console.log("acceleration: " + propellingNozzleArray[0].getAcceleration());
+            console.log("Check if it is a PropulsionUnit: " + (propellingNozzleArray[0] instanceof SimulateVehicles.PropulsionUnit));
+
+            console.log("</br>Aircraft:");
+            var aircraft = new SimulateVehicles.AirVehicle(200);
+            console.log("Before acceleration:");
+            console.log("speed: " + aircraft.speed);
+            aircraft.accelerate();
+            console.log("After acceleration:");
+            console.log("speed: " + aircraft.speed);
+            console.log("After switchAfterburnerOn and acceleration:");
+            aircraft.switchAfterburners();
+            aircraft.accelerate();
+            console.log("speed: " + aircraft.speed);
+
+            ////Test the exception in the WaterVehicle
+            var propellerArray = [new SimulateVehicles.Propeller(5, SimulateVehicles.spinDirectionTypes.clockwise), new SimulateVehicles.Propeller(5, SimulateVehicles.spinDirectionTypes.clockwise)];
+            console.log("</br>Propeller:");
+            console.log("numberOfFins: " + propellerArray[0].numberOfFins);
+            console.log("acceleration: " + propellerArray[0].getAcceleration());
+            console.log("Check if it is a PropulsionUnit: " + (propellerArray[0] instanceof SimulateVehicles.PropulsionUnit));
+
+            console.log("</br>Watercraft:");
+            var watercraft = new SimulateVehicles.WaterVehicle(50, propellerArray);
+            console.log("Before acceleration:");
+            console.log("speed: " + watercraft.speed);
+            watercraft.accelerate();
+            console.log("After acceleration:");
+            console.log("speed: " + watercraft.speed);
+            console.log("After set the spinDirection to counter-clockwise and acceleration:");
+            watercraft.changeSpinDirection();
+            watercraft.accelerate();
+            console.log("speed: " + watercraft.speed);
+            console.log("Check if it is a Vehicle: " + (watercraft instanceof SimulateVehicles.Vehicle));
+
+            ////Test the exception in the AmphibiousVehicle
+            var amphibiaPropulsionUnits = [new SimulateVehicles.Propeller(5, SimulateVehicles.spinDirectionTypes.clockwise), new SimulateVehicles.Wheel(20), new SimulateVehicles.Wheel(20), new SimulateVehicles.Wheel(20)];
+
+            console.log("</br>Ampibia:");
+            var amphibia = new SimulateVehicles.AmphibiousVehicle(30, amphibiaPropulsionUnits, true);
+            console.log("Is on water mode: " + amphibia.isOnWater);
+            console.log("Before acceleration:");
+            console.log("speed: " + amphibia.speed);
+            amphibia.accelerate();
+            console.log("After acceleration:");
+            console.log("speed: " + amphibia.speed);
+            console.log("After switching to land mode and acceleration:");
+            amphibia.switchMode();
+            amphibia.accelerate();
+            console.log("Is on water mode: " + amphibia.isOnWater);
+            console.log("speed: " + amphibia.speed);
+            console.log("Check if it is a Vehicle: " + (amphibia instanceof SimulateVehicles.Vehicle));
+        }
+    </script>
+</head>
+<body onload="testVehicle()">
+
+</body>
+</html>

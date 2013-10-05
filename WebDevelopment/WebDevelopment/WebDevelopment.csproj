@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD5D32DC-622D-4C80-9963-F26FA572DB51}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebDevelopment</RootNamespace>
+    <AssemblyName>WebDevelopment</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HTML\01-HTML\css\Style.css" />
+    <Content Include="HTML\01-HTML\Friends.html" />
+    <Content Include="HTML\01-HTML\HelloStranger.html" />
+    <Content Include="HTML\01-HTML\Info.html" />
+    <Content Include="HTML\01-HTML\PrecedingText.html" />
+    <Content Include="HTML\01-HTML\Profile.html" />
+    <Content Include="HTML\02-HTML-Tables\Calculator.html" />
+    <Content Include="HTML\02-HTML-Tables\Form.html" />
+    <Content Include="HTML\02-HTML-Tables\FreshFruits.html" />
+    <Content Include="HTML\02-HTML-Tables\Table.html" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\Filter.png" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\mac.png" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\paging_first_grey.png" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\paging_last_grey.png" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\paging_next.png" />
+    <Content Include="HTML\03-HTML-forms-frames\Images\paging_previous_grey.png" />
+    <Content Include="HTML\03-HTML-forms-frames\LaptopList.html" />
+    <Content Include="HTML\03-HTML-forms-frames\Products.html" />
+    <Content Include="HTML\03-HTML-forms-frames\Students.html" />
+    <Content Include="HTML\03-HTML-forms-frames\Style\LaptopList.css" />
+    <Content Include="HTML\03-HTML-forms-frames\WebForm.html" />
+    <Content Include="HTML\04-HTML-semantic-web\homework-design-1.html" />
+    <Content Include="HTML\04-HTML-semantic-web\homework-design-2.html" />
+    <Content Include="HTML\04-HTML-semantic-web\refactoring-homework.html" />
+    <Content Include="HTML\04-HTML-semantic-web\Styles\homework-design-1.css" />
+    <Content Include="CSS\CssLayout\about.html" />
+    <Content Include="CSS\CssLayout\BTVNews.html" />
+    <Content Include="CSS\CssLayout\Images\arrowLeft.png" />
+    <Content Include="CSS\CssLayout\Images\arrowRight.png" />
+    <Content Include="CSS\CssLayout\Images\bgButton.png" />
+    <Content Include="CSS\CssLayout\Images\bgButton25Style.png" />
+    <Content Include="CSS\CssLayout\Images\bgLine.png" />
+    <Content Include="CSS\CssLayout\Images\css.png" />
+    <Content Include="CSS\CssLayout\Images\go-button.png" />
+    <Content Include="CSS\CssLayout\Images\mac.png" />
+    <Content Include="CSS\CssLayout\Images\monitor.png" />
+    <Content Include="CSS\CssLayout\Images\music1.png" />
+    <Content Include="CSS\CssLayout\Images\music2.png" />
+    <Content Include="CSS\CssLayout\Images\music3.png" />
+    <Content Include="CSS\CssLayout\Images\player.png" />
+    <Content Include="CSS\CssLayout\LaptopList.html" />
+    <Content Include="CSS\CssLayout\List.html" />
+    <Content Include="CSS\CssLayout\MusicCategories.html" />
+    <Content Include="CSS\CssLayout\readme.txt" />
+    <Content Include="CSS\CssLayout\Style\List.css" />
+    <Content Include="CSS\CssLayout\Style\about.css" />
+    <Content Include="CSS\CssLayout\Style\BTVNews.css" />
+    <Content Include="CSS\CssLayout\Style\LaptopList.css" />
+    <Content Include="CSS\CssLayout\Style\MusicCategories.css" />
+    <Content Include="CSS\CssLayout\Style\w3schools.css" />
+    <Content Include="CSS\CssLayout\w3schools.html" />
+    <Content Include="CSS\CssOverview\ContactTable.html" />
+    <Content Include="CSS\CssOverview\homework-3.html" />
+    <Content Include="CSS\CssOverview\homework-3.png" />
+    <Content Include="CSS\CssOverview\Images\flag-mexico.gif" />
+    <Content Include="CSS\CssOverview\Images\flag_germany.gif" />
+    <Content Include="CSS\CssOverview\Images\flag_uk.gif" />
+    <Content Include="CSS\CssOverview\Images\green-circle.png" />
+    <Content Include="CSS\CssOverview\Style\homework-3.css" />
+    <Content Include="CSS\CssOverview\Style\StyleSheet1.css" />
+    <Content Include="CSS\CssOverview\Style\StyleSheet2.css" />
+    <Content Include="CSS\CssOverview\TicketID.html" />
+    <Content Include="CSS\CSSPresentation\Calculator.html" />
+    <Content Include="CSS\CSSPresentation\images\bgTop.png" />
+    <Content Include="CSS\CSSPresentation\images\calcIco.png" />
+    <Content Include="CSS\CSSPresentation\images\close.png" />
+    <Content Include="CSS\CSSPresentation\images\maximize.png" />
+    <Content Include="CSS\CSSPresentation\images\minimize.png" />
+    <Content Include="CSS\CSSPresentation\Lorem.html" />
+    <Content Include="CSS\CSSPresentation\Style\2. homework.css" />
+    <Content Include="CSS\CSSPresentation\2. homework.html" />
+    <Content Include="CSS\CSSPresentation\Homework-2.png" />
+    <Content Include="CSS\CSSPresentation\images\li-dot.png" />
+    <Content Include="CSS\CSSPresentation\images\Sample Logo.png" />
+    <Content Include="CSS\CSSPresentation\Style\Calculator.css" />
+    <Content Include="CSS\CSSPresentation\Style\Lorem.css" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="index.html" />
+    <Content Include="CSS\LessHM\homework.html" />
+    <Content Include="CSS\LessHM\Homework.png" />
+    <Content Include="CSS\LessHM\images\li-dot.png" />
+    <Content Include="CSS\LessHM\images\Sample Logo.png" />
+    <Content Include="CSS\LessHM\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="CSS\LessHM\style.min.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="CSS\SASSHM\Homework.css">
+      <DependentUpon>Homework.scss</DependentUpon>
+    </Content>
+    <Content Include="CSS\SASSHM\homework.html" />
+    <Content Include="CSS\SASSHM\Homework.png" />
+    <Content Include="CSS\SASSHM\images\image-1.jpg" />
+    <Content Include="CSS\SASSHM\images\image-2.jpg" />
+    <Content Include="CSS\SASSHM\images\image-3.jpg" />
+    <Content Include="CSS\SASSHM\images\image-4.jpg" />
+    <Content Include="CSS\SASSHM\images\li-dot.png" />
+    <Content Include="CSS\SASSHM\images\Sample Logo.png" />
+    <Content Include="CSS\SASSHM\webgallery.css">
+      <DependentUpon>webgallery.scss</DependentUpon>
+    </Content>
+    <Content Include="CSS\SASSHM\WebGallery.html" />
+    <Content Include="JS1\Arrays\Default.html" />
+    <Content Include="JS1\Arrays\script.js" />
+    <Content Include="JS1\Arrays\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\ConditionalStatements\Default.html" />
+    <Content Include="JS1\ConditionalStatements\script.js" />
+    <Content Include="JS1\ConditionalStatements\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\Functions\Default.html" />
+    <Content Include="JS1\Functions\script.js" />
+    <Content Include="JS1\Functions\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\Loops\Default.html" />
+    <Content Include="JS1\Loops\script.js" />
+    <Content Include="JS1\Loops\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\Objects\Default.html" />
+    <Content Include="JS1\Objects\script.js" />
+    <Content Include="JS1\Objects\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\OperatorsExpressions\Default.html" />
+    <Content Include="JS1\OperatorsExpressions\script.js" />
+    <Content Include="JS1\OperatorsExpressions\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS1\Strings\Default.html" />
+    <Content Include="JS1\Strings\script.js" />
+    <Content Include="JS1\Strings\Scripts\jquery-1.7.1.js" />
+    <Content Include="JS2\AdvanceFunctions\Default.html" />
+    <Content Include="JS2\AdvanceFunctions\domModule.js" />
+    <Content Include="JS2\AdvanceFunctions\movingShapes.js" />
+    <Content Include="JS2\AdvanceFunctions\specialConsole.js" />
+    <Content Include="JS2\APIs\CleanTheTrash.html" />
+    <Content Include="JS2\APIs\Drawing.html" />
+    <Content Include="JS2\APIs\Images\bucketClose.jpg" />
+    <Content Include="JS2\APIs\Images\bucketOpen.jpg" />
+    <Content Include="JS2\APIs\Images\trash.jpg" />
+    <Content Include="JS2\APIs\MovableCircle.html" />
+    <Content Include="JS2\APIs\storage.js" />
+    <Content Include="JS2\DomManipulation\ChangeColors.html" />
+    <Content Include="JS2\DomManipulation\GenerateTagCloud.html" />
+    <Content Include="JS2\DomManipulation\MovableDivs.html" />
+    <Content Include="JS2\DomManipulation\querySelectorTest.html" />
+    <Content Include="JS2\DomManipulation\RandomDivElements.html" />
+    <Content Include="JS2\DomManipulation\Scripts\ChangeColors.js" />
+    <Content Include="JS2\DomManipulation\Scripts\jquery-2.0.0.js" />
+    <Content Include="JS2\DomManipulation\Scripts\jquery.plugin.js" />
+    <Content Include="JS2\DomManipulation\Scripts\jquery.timer.js" />
+    <Content Include="JS2\DomManipulation\Scripts\MovableDivs.js" />
+    <Content Include="JS2\DomManipulation\Scripts\RandomDivElements.js" />
+    <Content Include="JS2\EventModel\Carousel.html" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image3.jpg" />
+    <Content Include="JSApps\JQueryOverview\ChangeBackground.html" />
+    <Content Include="JSApps\JQueryOverview\GenerateTable.html" />
+    <Content Include="JSApps\JQueryOverview\Images\blank.gif" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_background.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_hex.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_hsb_b.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_hsb_h.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_hsb_s.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_indic.gif" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_overlay.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_rgb_b.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_rgb_g.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_rgb_r.png" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_select.gif" />
+    <Content Include="JSApps\JQueryOverview\Images\colorpicker_submit.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_background.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_hex.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_hsb_b.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_hsb_h.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_hsb_s.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_indic.gif" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_rgb_b.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_rgb_g.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_rgb_r.png" />
+    <Content Include="JSApps\JQueryOverview\Images\custom_submit.png" />
+    <Content Include="JSApps\JQueryOverview\Images\image3.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image4.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image5.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image6.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image7.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image8.jpg" />
+    <Content Include="JSApps\AdvancedOOP\Images\Large\image9.jpg" />
+    <Content Include="JSApps\JQueryOverview\Images\arrowLeft.png" />
+    <Content Include="JSApps\JQueryOverview\Images\arrowRight.png" />
+    <Content Include="JS2\EventModel\Images\Image1.jpg" />
+    <Content Include="JS2\EventModel\Images\Image2.jpg" />
+    <Content Include="JS2\EventModel\Images\Image3.jpg" />
+    <Content Include="JS2\EventModel\Images\Image4.jpg" />
+    <Content Include="JS2\EventModel\Images\Image5.jpg" />
+    <Content Include="JS2\EventModel\Images\Image6.jpg" />
+    <Content Include="JS2\EventModel\Images\Image7.jpg" />
+    <Content Include="JS2\EventModel\ToDoList.html" />
+    <Content Include="JS2\OOP\Default.html" />
+    <Content Include="JS2\OOP\Scripts\SimulateVehicles.js" />
+    <None Include="Scripts\jquery-2.0.0.intellisense.js" />
+    <Content Include="JSApps\AdvancedOOP\FavoriteSiteBar.html" />
+    <Content Include="JSApps\AdvancedOOP\ImageSlider.html" />
+    <Content Include="JSApps\AdvancedOOP\SchoolRepository.html" />
+    <Content Include="JSApps\AdvancedOOP\SchoolRepositoryClassic.html" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\classicClassCreate.js" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\FavoriteSiteBar.js" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\ImageSlider.js" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\prototypeCreateExtend.js" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\SchoolRepository.js" />
+    <Content Include="JSApps\AdvancedOOP\Scripts\SchoolRepositoryClassic.js" />
+    <Content Include="JSApps\AdvancedOOP\Styles\SliderStyle.css" />
+    <Content Include="JSApps\JQueryOverview\Images\select.png" />
+    <Content Include="JSApps\JQueryOverview\Images\select2.png" />
+    <Content Include="JSApps\JQueryOverview\Images\slider.png" />
+    <Content Include="JSApps\JQueryOverview\InsertElement.html" />
+    <Content Include="JSApps\JQueryOverview\Scripts\colorpicker.js" />
+    <Content Include="JSApps\JQueryOverview\Scripts\eye.js" />
+    <Content Include="JSApps\JQueryOverview\Scripts\jquery-2.0.0.js" />
+    <Content Include="JSApps\JQueryOverview\Scripts\Slider.js" />
+    <Content Include="JSApps\JQueryOverview\Scripts\utils.js" />
+    <Content Include="JSApps\JQueryOverview\Slider.html" />
+    <Content Include="JSApps\JQueryOverview\Styles\colorpicker.css" />
+    <Content Include="JSApps\JQueryOverview\Styles\Slider.css" />
+    <Content Include="JSApps\JQueryPlugins\Default.html" />
+    <Content Include="JSApps\JQueryPlugins\Scripts\jquery-2.0.0.js" />
+    <Content Include="JSApps\JQueryPlugins\Scripts\TreeView.js" />
+    <Content Include="JSApps\ThirdPartyAPIs\OnlineMapTourism.html" />
+    <Content Include="JSApps\ThirdPartyAPIs\Scripts\gmap.js" />
+    <Content Include="JSApps\ThirdPartyAPIs\Scripts\jquery-2.0.0.js" />
+    <Content Include="Scripts\jquery-2.0.0.js" />
+    <Content Include="Scripts\jquery-2.0.0.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\CSSPresentation\itcedscr.ttf" />
+    <Content Include="CSS\SASSHM\webgallery.scss" />
+    <Content Include="CSS\LessHM\style.less" />
+    <Content Include="CSS\SASSHM\Homework.scss" />
+    <Content Include="JS1\Arrays\Arrays.rar" />
+    <Content Include="JS1\ConditionalStatements\ConditionalStatements.rar" />
+    <Content Include="JS1\Functions\Functions.rar" />
+    <Content Include="JS1\Loops\Loops.rar" />
+    <Content Include="JS1\Objects\Objects.rar" />
+    <Content Include="JS1\OperatorsExpressions\OperatorsExpressions.rar" />
+    <Content Include="JS1\Strings\Strings.rar" />
+    <Content Include="JS2\AdvanceFunctions\AdvanceFunctions.rar" />
+    <Content Include="JS2\APIs\APIs.rar" />
+    <Content Include="JS2\DomManipulation\DomManipulation.rar" />
+    <Content Include="JS2\EventModel\EventModel.rar" />
+    <Content Include="JS2\OOP\OOP.rar" />
+    <Content Include="Scripts\jquery-2.0.0.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="JSApps\AdvancedOOP\Images\Thumb\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50094/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

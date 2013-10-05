@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/classicClassCreate.js"></script>
+    <script src="Scripts/SchoolRepositoryClassic.js"></script>
+    <script>
+        var student1 = new Student("Pesho", "Peshev", 22, 4);
+        var student2 = new Student("Peshko", "Peshekov", 23, 7);
+        var teacher1 = new Teacher("Gosho", "Goshev", 21, "JS");
+        var teacher2 = new Teacher("Goshko", "Goshkov", 22, "C#");
+        document.write(student1.introduce() + "<br>");
+        document.write(student2.introduce() + "<br>");
+        document.write(teacher1.introduce() + "<br>");
+        document.write(teacher2.introduce() + "<br>");
+
+        var class1 = new Course("class1", 5, [student1, student2], teacher1);
+        var class2 = new Course("class2", 1, [student1], teacher2);
+        document.write(class1.introduce() + "<br>");
+        document.write(class2.introduce() + "<br>");
+        var school = new School("Hari Potar", "Harilandia", [class1, class2]);
+        document.write(school.introduce() + "<br>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

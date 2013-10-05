@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+<body>
+    <div id="wrapper"></div>
+    <script>
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net", "css", "wordpress", "xaml", "js", "http", "web", "asp.net", "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms", "html", "javascript", "http", "http", "CMS"]
+
+        var tagCloud = generateTagCloud(tags, 17, 42);
+
+        function generateTagCloud(tags, minFontSize, maxFontSize) {
+            var i, item;
+            var length;
+            var result = [];
+            var resultCount = 0;
+
+            for (i = 0, length = tags.length; i < length; i++) {
+                if (result[tags[i]] === undefined) {
+                    result[tags[i]] = 1;
+                    resultCount++;
+                } else {
+                    result[tags[i]]++;
+                }
+            }
+
+            var maxValue = Number.MIN_VALUE;
+            for (item in result) {
+                if (result[item] > maxValue) {
+                    maxValue = result[item];
+                }
+            }
+
+            var step = (maxFontSize - minFontSize) / (maxValue - 1);
+            var maindiv = document.getElementById("wrapper");
+            maindiv.style.width = "150px";
+            
+            for (item in result) {
+                maindiv.appendChild(createElement(item, parseInt((result[item] - 1) * step + minFontSize)));
+            }
+
+            function createElement(text, fontSize) {
+                var doc = document.createElement('span');
+                
+                doc.style.margin = "5px";
+                doc.style.fontSize = fontSize + "px";
+                doc.innerHTML = text;
+                return doc;
+            }
+
+        };
+
+
+
+    </script>
+</body>
+</html>

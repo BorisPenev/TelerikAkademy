@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        li {
+            cursor: pointer;
+        }
+        .selected {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="txtNewFolderName"/>
+    <button id="btnAddFolder">Add Folder</button>
+
+
+    <ul id="treeViewContainer">
+    </ul>
+
+
+    <script src="scripts/siteController.js"></script>
+    <script src="scripts/treeView.js"></script>
+    <script>
+        var treeview = SiteController.treeView();
+        
+    </script>
+</body>
+</html>

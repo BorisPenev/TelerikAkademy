@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form name="myForm" method="post" action="submit.aspx">
+    <fieldset>
+        Member Name:
+        <input id="txtMemberName" type="text" name="memberName" required />
+        *req<br />
+        Email:
+        <input id="txtEmail" type="text" name="email" required pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{2,}.[a-zA-Z0-9_]{2,4}" />
+        *req<br />
+        School:
+        <input id="txtschool" type="text" name="school" required />
+        *req<br />
+        <input id="btnSubmit" type="image" src="http://pharmalicensing.com/images/bttn_submit.gif" alt="Submit" />
+    </fieldset>
+    </form>
+</body>
+</html>

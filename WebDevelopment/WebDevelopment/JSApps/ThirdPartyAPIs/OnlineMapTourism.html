@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <!-- Add styles for width and height -->
+    <style>
+        #map-canvas {
+            margin: 0;
+            padding: 0;
+            height: 500px;
+            width: 1000px;
+            display: inline-block;
+        }
+        #pnlNav {
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="Scripts/gmap.js"></script>
+</head>
+<body>
+    <div id="wrapper" style="width: 100%">
+        <div id="pnlNav">
+            <ul id="cities"></ul>
+            <button id="btnPrevious"><</button>
+            <button id="btnNext">></button>
+        </div>
+        <div id="map-canvas"></div>
+    </div>
+</body>
+</html>

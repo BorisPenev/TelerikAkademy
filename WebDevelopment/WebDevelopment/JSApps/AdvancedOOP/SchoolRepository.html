@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/prototypeCreateExtend.js"></script>
+    <script src="Scripts/SchoolRepository.js"></script>
+    <script>
+        var student1 = Object.create(Student);
+        student1.init("Pesho", "Peshev", 22, 4);
+        var student2 = Object.create(Student);
+        student2.init("Peshko", "Peshekov", 23, 7);
+        var teacher1 = Object.create(Teacher);
+        teacher1.init("Gosho", "Goshev", 21, "JS");
+        var teacher2 = Object.create(Teacher);
+        teacher2.init("Goshko", "Goshkov", 22, "C#");
+        document.write(student1.introduce() + "<br>");
+        document.write(student2.introduce() + "<br>");
+        document.write(teacher1.introduce() + "<br>");
+        document.write(teacher2.introduce() + "<br>");
+
+        var class1 = Object.create(Course);
+        class1.init("class1", 5, [student1, student2], teacher1);
+        var class2 = Object.create(Course);
+        class2.init("class2", 1, [student1], teacher2);
+        document.write(class1.introduce() + "<br>");
+        document.write(class2.introduce() + "<br>");
+        var school = Object.create(School);
+        school.init("Hari Potar", "Harilandia", [class1, class2]);
+        document.write(school.introduce() + "<br>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+</head>
+<body>
+    <!--Write a function that by a given array of animals, 
+        groups them by species and sorts them by number of legs
+-->
+
+        <script>
+            var Person = Class.create({
+                init: function (book, author) {
+                    this.book = book;
+                    this.author = author;
+                },
+                toString: function () {
+                    return this.book + " " + this.author;
+                }
+            });
+
+            var people = [
+                new Person("Doncho", "Minkov"),
+                new Person("Joro", "Georgiev"),
+                new Person("Niki", "Georgiev"),
+                new Person("Svetlin", "Nakov"),
+                new Person("Ivaylo", "Kenov")];
+
+            var groupByAuthor = _.groupBy(people, "author");
+            var map = _.map(groupByAuthor, function(item, key) {
+                return [key, item.length];
+            });
+            var order = _.sortBy(map, function(i) {
+                return i[1];
+            });
+            document.write(_.last(order));
+        </script>
+</body>
+</html>

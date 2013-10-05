@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+</head>
+<body>
+    <!--Write a function that by a given array of students finds the student with highest marks
+-->
+
+        <script>
+            var Person = Class.create({
+                init: function (fname, lname, marks) {
+                    this.fname = fname;
+                    this.lname = lname;
+                    this.marks = marks;
+                },
+                toString: function () {
+                    return this.fname + " " + this.lname + " " + this.marks;
+                }
+            });
+
+            var people = [
+                new Person("Doncho", "Minkov", 19),
+                new Person("Joro", "Georgiev", 48),
+                new Person("Niki", "Kostov", 21),
+                new Person("Svetlin", "Nakov", 16),
+                new Person("Ivaylo", "Kenov", 87)];
+
+            var filteredPeoples = _.sortBy(people, "marks");
+
+            document.write(_.last(filteredPeoples).fname + "<br/>");
+
+        </script>
+</body>
+</html>

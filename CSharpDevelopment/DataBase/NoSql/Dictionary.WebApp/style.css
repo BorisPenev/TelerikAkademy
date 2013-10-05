@@ -1,0 +1,12 @@
+﻿body {
+    padding: 0;
+}
+
+table {
+    border: 1px solid red;
+    background-color: red;
+}
+
+tr {
+    background-color: red;
+}

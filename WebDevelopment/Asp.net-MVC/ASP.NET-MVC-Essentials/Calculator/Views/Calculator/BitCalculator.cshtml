@@ -1,0 +1,29 @@
+﻿@model Calculator.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Bit Calculator";
+}
+
+<hgroup>
+    @Image.Create("/Content/binaryIcon.png", "bit")
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+<div>
+    <br />
+    @using (Html.BeginForm("BitCalculator", "Calculator", FormMethod.Post))
+    {
+        <p>Quantity</p>
+        <p>@Html.TextBox("value", 1, new { onchange = "this.form.submit();" })</p>
+        <p>Type</p>
+        <p>@Html.DropDownListFor(m => m.SelectedType, Model.Types, new { onchange = "this.form.submit();" })</p>
+        <p>Kilo</p>
+        <p>@Html.DropDownListFor(m => m.SelectedKilo, Model.Kilos, new { onchange = "this.form.submit();" })</p>
+        <input type="submit" value="GO" />
+    }
+</div>
+<div>
+    @if (Model.Result != null)
+    {
+        @Html.Partial("_CalculatorResults", Model.Result);
+    }
+</div>

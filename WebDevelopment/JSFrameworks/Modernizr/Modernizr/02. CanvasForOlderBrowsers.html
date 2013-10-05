@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>02. CanvasForOlderBrowsers</title>
+
+    <script src="scripts/external/jquery-1.10.2.js"></script>
+    <script src="scripts/modernizr.custom.91041.js"></script>
+
+
+    <script>
+        Modernizr.load({
+            test: Modernizr.canvas,
+            nope: 'scripts/flashcanvas.js'
+        });
+
+        Modernizr.load({
+            test: Modernizr.geolocation,
+            nope: 'scripts/geolocation.js'
+        });
+
+        Modernizr.load({
+            test: Modernizr.localstorage,
+            nope: 'scripts/cupcake.js'
+        });
+    </script>
+</head>
+
+<body>
+    <div id="geoLocation"></div>
+
+    <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3;">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <div id="local"></div>
+
+    <!--geolocation-->
+    <script>
+        var x = document.getElementById("geoLocation");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else { x.innerHTML = "Geolocation is not supported by this browser."; }
+        }
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+            "<br>Longitude: " + position.coords.longitude;
+        }
+
+        getLocation();
+
+    </script>
+    <!--canvas-->
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 75);
+    </script>
+    <!--localStorage-->
+    <script>
+        var testObject = 'test';
+
+        // Put the object into storage
+        localStorage.setItem('testObject', 'test');
+
+        // Retrieve the object from storage
+        var retrievedObject = localStorage.getItem('testObject');
+        var localSt = document.getElementById("local");
+        localSt.innerHTML = retrievedObject;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        ul, li {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            background-color: #F7F5F6;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        li {
+            border: 1px solid #000000;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            margin: 5px;
+        }
+
+        .imageItem {
+            float: left;
+            border: 1px solid #000000;
+            padding: 10px;
+            margin: 10px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            -moz-box-shadow: 3px 3px 3px 3px #ccc;
+            -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+            box-shadow: 3px 3px 3px 3px #ccc;
+            background-color: white;
+        }
+
+        .imageItem:hover {
+            background-color: lightgreen;
+        }
+
+        img {
+            cursor: pointer;
+        }
+        div.container {
+            overflow: auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        li > p {
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            background-color: lightblue;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 0px;
+        }
+
+        /*show Image*/
+        .black_overlay {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            z-index: 1;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 40%;
+            left: 45%;
+            width: 200px;
+            min-height: 200px;
+            padding: 5px;
+            border: 1px solid #FF8410;
+            background-color: #fff;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            z-index: 120000;
+            color: #000;
+        }
+    </style>
+</head>
+    <body>
+        
+        Read source code for more information and examples how to use my build.
+        <form>
+            <input type="button" id="btnSort" value="Sort" />
+        </form>
+
+        <div id="image-gallery-holder"></div>
+        <div id="copied-gallery-holder"></div>
+
+        <div id="pnlPopup" class="popup">
+        </div>
+
+        <div id="pnlFade" class="black_overlay" onclick="ClosePopupWindow()"></div>
+
+        <script src="Scripts/Helpers.js"></script>
+        <script src="Scripts/PopupControl.js"></script>
+        <script src="Scripts/shims.js"></script>
+        <script src="Scripts/imageGallery.js"></script>
+        <script src="Scripts/imageGalleryRepository.js"></script>
+    
+        <script>
+
+            //As I ask Goro it seems is in IE bug. When run html file from file system not all js futures work.
+            //If you run it throut we for example in http://localhost/ from VS it work as expected.
+            //all functions work in other browsers.
+            //SCRIPT5007: Unable to set property 'ninjas-gallery' of undefined or null reference 
+
+            var gallery = controls.getImageGallery('#image-gallery-holder'); //Task 1: Create New Gallery
+            gallery.addImage("</br>", "images/jsninja.png"); //Task 1: Add New Image in the gallery
+            gallery.addImage("b JS Ninja", "images/jsninja.png");
+            gallery.addImage("y JS Ninja", "images/jsninja.png");
+        
+            var ninjasAlbum = gallery.addAlbum("Ninjas"); //Task 1: Create a new Album
+            ninjasAlbum.addImage("g JS Ninja 2", "images/jsninja.png"); //Task 1: Add New Image in the album
+            ninjasAlbum.addImage("f JS Ninja 2", "images/jsninja.png");
+            ninjasAlbum.addImage("d JS Ninja 2", "images/jsninja.png");
+        
+            var kidsAlbum = ninjasAlbum.addAlbum("Kids Nunjas"); //Task 2: Create a new SubAlbum
+            kidsAlbum.addImage("JS Ninja 3", "images/jsninja.png"); //Task 2: Add New Image in the subAlbum
+            kidsAlbum.addImage("JS Ninja 3", "images/jsninja.png");
+        
+            var kidsAlbum = ninjasAlbum.addAlbum("a Kids Nunjas"); //Task 8: Add as a demo new Album on same level to see if order functionality work
+            kidsAlbum.addImage("JS Ninja 3", "images/jsninja.png");
+            kidsAlbum.addImage("JS Ninja 3", "images/jsninja.png");
+            gallery.render(); //Use render to rend whole gallery
+
+            //Task 4:
+            //This is a database model. If you get or save this information to the database like mysql will be in this format with Id, SubId... etc...
+            //Usualy dinamic gallery is load from the database and this is more compatible with this model. 
+            //You can generate your own data if you want as this example:
+            //It represent same information as above except Task 8
+            var imageGalleryData = [];
+            imageGalleryData.push({ Id: 1, SubId: 0, Title: "JS Ninja", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 2, SubId: 0, Title: "JS Ninja", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 3, SubId: 0, Title: "JS Ninja", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 4, SubId: 0, Title: "Ninjas" });
+            imageGalleryData.push({ Id: 5, SubId: 4, Title: "JS Ninja 2", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 6, SubId: 4, Title: "JS Ninja 2", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 7, SubId: 4, Title: "JS Ninja 2", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 8, SubId: 4, Title: "Kids Ninjas" });
+            imageGalleryData.push({ Id: 9, SubId: 8, Title: "JS Ninja 3", ImgSrc: "images/jsninja.png" });
+            imageGalleryData.push({ Id: 10, SubId: 8, Title: "JS Ninja 3", ImgSrc: "images/jsninja.png" });
+            imageGalleryRepository.save("ninjas-gallery", imageGalleryData);
+
+            var newGalleryData = imageGalleryRepository.load("ninjas-gallery");
+            console.log(newGalleryData);// you can see in your console the result
+
+            //Task 5:
+            //We will use the same data from task1 and 2 so not need to create a new control and add the data again
+            var imageGalleryDataTask5 = gallery.getImageGalleryData();
+            imageGalleryRepository.save("ninjas-galleryTask5", imageGalleryDataTask5);
+
+            //Task 6:
+            //We will load the data in a new copied-holder so you can see it is same like the original from task2 and 3
+            var imageGalleryDataTask6 = imageGalleryRepository.load("ninjas-galleryTask5");
+            var copiedNingasGallery = controls.buildImageGallery('#copied-gallery-holder', imageGalleryDataTask6);
+            copiedNingasGallery.render();
+
+            //Task 7: After click on image and see it as a popup click on the dark opacity background around to close it.
+
+            //Task 8:
+            var btnSort = document.getElementById('btnSort');
+            if (!btnSort.addEventListener) {
+                btnSort.attachEvent("onclick", btnSortClicked);
+            }
+            else {
+                btnSort.addEventListener("click", btnSortClicked, false);
+            }
+
+            function btnSortClicked(ev) {
+                initEvents(ev);
+                gallery.orderByAscending();
+            }
+        </script>
+    </body>
+</html>

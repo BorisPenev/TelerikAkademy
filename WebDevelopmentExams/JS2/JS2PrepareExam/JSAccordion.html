@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+    <body>
+        <ul id="accordion-holder"></ul>
+        <ul id="copied-accordion-holder"></ul>
+    
+    </body>
+    <script src="AccordionScripts/accordion.js"></script>
+    <script src="AccordionScripts/local-storage-extensions.js"></script>
+    <script>
+
+        var accordion = controls.getAccordion("#accordion-holder");
+            var webItem = accordion.add("Web");
+            webItem.add("HTML");
+            webItem.add("CSS");
+            webItem.add("JavaScript");
+                var webItem2 = webItem.add("jQuery");
+                webItem2.add("ASP.NET MVC");
+        accordion.add("Desktop");
+        accordion.add("Mobile");
+            var webItem = accordion.add("Web");
+            webItem.add("HTML");
+            webItem.add("CSS");
+            webItem.add("JavaScript");
+        accordion.add("Embedded");
+        accordion.render();
+
+        var serialized = accordion.serialize();
+        localStorage.setObject("acc", serialized);
+
+        var deserializedData = localStorage.getObject("acc");
+        var clonedAccordion = controls.buildAccordion("#copied-accordion-holder", deserializedData);
+        clonedAccordion.render();
+        
+        
+    </script>
+</html>

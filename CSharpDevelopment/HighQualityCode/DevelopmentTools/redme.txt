@@ -1,0 +1,7 @@
+http://en.wikipedia.org/wiki/List_of_obfuscators_for_.NET
+
+Polzwal sam: http://www.deepseaobfuscator.com/
+no triala mi e iztekal taka che nqmam v momenta kakvo da snimam.
+
+source control: https://www.assembla.com/code/lunarbase/subversion/nodes
+

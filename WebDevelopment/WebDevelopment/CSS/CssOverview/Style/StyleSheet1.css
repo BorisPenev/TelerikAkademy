@@ -1,0 +1,38 @@
+body
+{
+    font-family:Arial;
+    background-color: #595959;
+}
+h1
+{
+    color: #b2c2c8;
+    font-size: 20px;
+    font-weight:normal;
+}
+table, th, td
+{
+    padding: 10px 0px;
+    vertical-align:top;
+}
+.labels
+{
+    font-style: italic;
+    color: #e6faf4;
+    width:140px;
+}
+.Color1
+{
+    color: #faefaa;
+}
+.Color2
+{
+    color: #fa0212;
+}
+.Color3
+{
+    color: #A2A6A4;
+}
+.Color4
+{
+    color: #dc6a23;
+}

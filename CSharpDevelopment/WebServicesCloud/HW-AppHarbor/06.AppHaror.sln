@@ -1,0 +1,36 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeJewelModels", "CodeJewelModels\CodeJewelModels.csproj", "{FF10B2BB-8DE8-4C71-B937-434D4DE314C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeJewelData", "CodeJewelData\CodeJewelData.csproj", "{D3B5D1C9-503B-4CCE-952D-3EA57C987263}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeJewelApi", "CodeJewelApi\CodeJewelApi.csproj", "{72A81F1C-6647-42A9-A039-992D81E68B30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF10B2BB-8DE8-4C71-B937-434D4DE314C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF10B2BB-8DE8-4C71-B937-434D4DE314C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF10B2BB-8DE8-4C71-B937-434D4DE314C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF10B2BB-8DE8-4C71-B937-434D4DE314C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B5D1C9-503B-4CCE-952D-3EA57C987263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B5D1C9-503B-4CCE-952D-3EA57C987263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B5D1C9-503B-4CCE-952D-3EA57C987263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B5D1C9-503B-4CCE-952D-3EA57C987263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B3F353A-7A62-4799-896B-DBBADCADB343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B3F353A-7A62-4799-896B-DBBADCADB343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B3F353A-7A62-4799-896B-DBBADCADB343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B3F353A-7A62-4799-896B-DBBADCADB343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A81F1C-6647-42A9-A039-992D81E68B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A81F1C-6647-42A9-A039-992D81E68B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A81F1C-6647-42A9-A039-992D81E68B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A81F1C-6647-42A9-A039-992D81E68B30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

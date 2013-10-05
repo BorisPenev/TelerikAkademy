@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrapper {
+            width: 640px;
+            height: 480px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #pnlItems {
+            position: absolute;
+        }
+        .content {
+            position: absolute;
+            float: left;
+        }
+
+        .menu {
+            background-repeat: no-repeat;
+            cursor: pointer;
+            top: 218px;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+        }
+
+        #arrowLeft {
+            background-image: url(Images/arrowLeft.png);
+            left: 10px;
+        }
+
+        #arrowRight {
+            background-image: url(Images/arrowRight.png);
+            left: 580px;
+        }
+    </style>
+    <script>
+        function RecurringTimer(callback, delay) {
+            var timerId, start, remaining = delay;
+
+            this.pause = function () {
+                window.clearTimeout(timerId);
+                remaining -= new Date() - start;
+            };
+
+            var resume = function () {
+                start = new Date();
+                timerId = window.setTimeout(function () {
+                    remaining = delay;
+                    resume();
+                    callback();
+                }, remaining);
+            };
+
+            this.resume = resume;
+
+            this.resume();
+        }
+        
+        function initCarousel() {
+            var wrapper = document.getElementById('wrapper');
+            var contents = wrapper.querySelectorAll('.content');
+            var globalWidth = 640;
+            var currentPosition = 0;
+            var len = contents.length;
+            var leftCountClick = 0;
+            var rightCountClick = 0;
+            var moveTime = 32;
+            var step = parseInt(globalWidth / moveTime);
+            var direction = 'left';
+            var rightTimer;
+            var leftTimer;
+            var i = 0;
+            var timer;
+            
+            var pnlItems = document.getElementById('pnlItems');
+            
+            for (i = 0; i < len; i++) {
+                contents[i].style.left = (i * globalWidth) + 'px';
+            }
+
+            function startCarousel() {
+                
+                timer = new RecurringTimer(function () {
+                        timer.pause();
+                        if (direction === 'right') {
+                            clearInterval(leftTimer);
+                            rightClickEvent();
+                        } else {
+                            clearInterval(rightTimer);
+                            leftClickEvent();
+                        }
+                }, 2000);
+                //carousel = setInterval(function () {
+                //    if (pauseTime <= 0) {
+                //        for (i = carousel; i >= 0; i--) {
+                //            clearInterval(carousel);
+                //            carousel--;
+                //        }
+                //        carousel = 0;
+                //        if (direction === 'right') {
+                //            clearInterval(leftTimer);
+                //            rightClickEvent();
+                //        } else {
+                //            clearInterval(rightTimer);
+                //            leftClickEvent();
+                //        }
+                //    } else {
+                //        pauseTime--;
+                //    }
+                //}, 300);
+            }
+
+            startCarousel();
+                
+            var arrowLeft = document.getElementById('arrowLeft');
+            arrowLeft.addEventListener('click', function () {
+                    direction = "left";
+            });
+
+            var arrowRight = document.getElementById('arrowRight');
+            arrowRight.addEventListener('click', function () {
+                    direction = "right";
+            });
+
+            function rightClickEvent() {
+                leftCountClick--;
+                rightCountClick++;
+                
+
+                var newDiv = document.createElement('div');
+                var childrenCount = pnlItems.children.length - 1;
+                newDiv.className = pnlItems.getElementsByTagName('div')[childrenCount].className; //'content';
+                newDiv.style.left = ((leftCountClick) * globalWidth) + 'px';
+                newDiv.innerHTML = pnlItems.getElementsByTagName('div')[childrenCount].innerHTML;
+                pnlItems.removeChild(pnlItems.getElementsByTagName('div')[childrenCount]);
+                pnlItems.insertBefore(newDiv, pnlItems.firstChild);
+
+                rightTimer = setInterval(function() {
+                    currentPosition += step;
+                    pnlItems.style.left = currentPosition + 'px';
+                    if (currentPosition > (globalWidth * rightCountClick - 1)) {
+                        clearInterval(rightTimer);
+                        //startCarousel();
+                        timer.resume();
+                    }
+                }, moveTime);
+            }
+
+            function leftClickEvent() {
+                leftCountClick++;
+                rightCountClick--;
+                leftTimer = setInterval(function() {
+                    currentPosition -= step;
+                    pnlItems.style.left = currentPosition + 'px';
+                    if (currentPosition <= -(globalWidth * leftCountClick)) {
+                        clearInterval(leftTimer);
+                        var newDiv = document.createElement('div');
+                        newDiv.className = pnlItems.getElementsByTagName('div')[0].className; //'content';
+                        newDiv.style.left = ((pnlItems.children.length + leftCountClick - 1) * globalWidth) + 'px';
+                        newDiv.innerHTML = pnlItems.getElementsByTagName('div')[0].innerHTML;
+                        pnlItems.removeChild(pnlItems.getElementsByTagName('div')[0]);
+                        pnlItems.appendChild(newDiv);
+                        //startCarousel();
+                        timer.resume();
+                    }
+                }, moveTime);
+            }
+        }
+    </script>
+    </head>
+<body onload="initCarousel()">
+    <div id="wrapper">
+        <div id="arrows">
+            <div id="arrowLeft" class="menu"></div>
+            <div id="arrowRight" class="menu"></div>
+        </div>
+        <div id="pnlItems">
+            <div class="content">
+                <img src="Images/Image1.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image2.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image3.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image4.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image5.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image6.jpg" />
+            </div>
+            <div class="content">
+                <img src="Images/Image7.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

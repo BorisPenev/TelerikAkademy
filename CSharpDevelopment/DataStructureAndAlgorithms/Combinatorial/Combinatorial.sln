@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublePassword", "DoublePassword\DoublePassword.csproj", "{EBB21287-43B0-426D-9217-FB60DD673742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorfulRowsOfBeads", "ColorfulRowsOfBeads\ColorfulRowsOfBeads.csproj", "{95539B3C-630F-4F6E-B407-95A35CDDE3F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBB21287-43B0-426D-9217-FB60DD673742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB21287-43B0-426D-9217-FB60DD673742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB21287-43B0-426D-9217-FB60DD673742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB21287-43B0-426D-9217-FB60DD673742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95539B3C-630F-4F6E-B407-95A35CDDE3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95539B3C-630F-4F6E-B407-95A35CDDE3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95539B3C-630F-4F6E-B407-95A35CDDE3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95539B3C-630F-4F6E-B407-95A35CDDE3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

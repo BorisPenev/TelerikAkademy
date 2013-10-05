@@ -1,0 +1,14 @@
+﻿@font-face {
+	font-family: EdwardianScriptITC;
+	src: url('../itcedscr.ttf');
+}
+
+body {
+    color: #0094ff;
+    font-family:Consolas;
+}
+p:first-line
+{ 
+    font-family: EdwardianScriptITC;
+	font-size: 3.2em;
+}

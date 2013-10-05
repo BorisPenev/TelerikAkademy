@@ -1,0 +1,33 @@
+﻿
+
+#imgMain {
+	text-align: center;
+	-ms-grid-row: 1;
+	width: 260px;
+	margin: 0px 60px;
+	
+}
+
+#item-content {
+	-ms-grid-row: 2;
+	height: 100%;
+	width: 380px;
+	-ms-grid-column: 1;
+	padding: 20px;
+}
+
+#grdMain {
+	display: -ms-grid;
+}
+
+#grdView {
+	-ms-grid-column: 2;
+	-ms-grid-row-span: 2;
+	width: 500px;
+	height: 100%;
+}
+
+.grdViewItem {
+	width: 160px;
+	height: 60px;
+}

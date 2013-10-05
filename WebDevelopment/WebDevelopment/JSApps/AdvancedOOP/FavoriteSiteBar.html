@@ -1,0 +1,41 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/classicClassCreate.js"></script>
+    <script src="Scripts/FavoriteSiteBar.js"></script>
+    <style>
+        #favoriteSiteBarContainer {
+            width: 400px;
+            border: 1px solid black;
+        }
+        a {
+            margin-left: 5px;
+        }
+        .FavoriteSiteBarParagraph {
+            width:100px;           
+            vertical-align:bottom;
+            padding-top:5px;
+            padding-left:5px;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+    <body>
+        <script>
+            var youtube = new Url("youtube", "http://www.youtube.com/");
+            var vbox = new Url("vbox", "http://vbox7.com/");
+            var videos = new Folder("Video", [youtube, vbox]);
+            
+            var vestiBg = new Url("vestiBg", "http://www.vesti.bg/");
+            var newsBg = new Url("newsBg", "http://news.ibox.bg/");
+            var news = new Folder("News", [vestiBg, newsBg]);
+            
+            var telerikAcademy = new Url("TelerikAkademy", "http://telerikacademy.com/");
+            var telerik = new Url("Telerik", "http://www.telerik.com/");
+            var favoriteSiteBar = new FavoriteSiteBar([telerik, telerikAcademy], [videos, news]);
+            favoriteSiteBar.display();
+        </script>
+    </body>
+</html>

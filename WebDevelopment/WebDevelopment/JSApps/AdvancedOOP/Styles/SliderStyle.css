@@ -1,0 +1,46 @@
+﻿.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #494949;
+    background: #191919; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #191919 0%, #424242 52%, #606060 71%, #a3a3a3 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#191919), color-stop(52%,#424242), color-stop(71%,#606060), color-stop(100%,#a3a3a3)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #191919 0%,#424242 52%,#606060 71%,#a3a3a3 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#a3a3a3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    color: white;
+    font-size: 24px;
+}
+
+#leftButton {
+    position: absolute;
+    left: 20px;
+    top: 450px;
+}
+
+#rightButton {
+    position: absolute;
+    left: 1230px;
+    top: 450px;
+}
+
+#imageWrapper {
+    width: 1280px;
+    height: 100px;
+    padding: 1px;
+}
+
+#preview-image {
+    padding: 2px;
+}
+
+.thumb {
+    width: 160px;
+    height: 100px;
+    padding: 0px 11.2px;
+}

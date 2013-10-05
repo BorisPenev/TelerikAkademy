@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function startDraw() {
+            var canvas = document.getElementById('mainCanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#72AAB6';
+            ctx.fillStyle = "#90CAD7";
+            //head
+            ctx.drawEllipse(95, 150, 160, 140);
+            ctx.fill();
+            //left eye
+            ctx.drawEllipse(120, 190, 25, 15);
+            ctx.fill();
+            //right eye
+            ctx.drawEllipse(180, 190, 25, 15);
+            ctx.fill();
+            //left eye
+            ctx.drawEllipse(126, 193, 6, 9);
+            ctx.fillStyle = '#72AAB6';
+            ctx.fill();
+            //right eye
+            ctx.drawEllipse(186, 193, 6, 9);
+            ctx.fill();
+            //mounth
+            ctx.save();
+            ctx.rotate(10 * Math.PI / 180);
+            ctx.fillStyle = "#90CAD7";
+            ctx.drawEllipse(170, 220, 65, 20);
+            ctx.fill();
+            ctx.restore();
+            ctx.lineWidth = 2;
+            //nouse
+            ctx.drawLine(160, 200, 140, 235);
+            ctx.drawLine(140, 235, 160, 235);
+            //hat
+            ctx.strokeStyle = '#000';
+            ctx.fillStyle = "#396693";
+            ctx.drawEllipse(95, 150, 155, 30);
+            ctx.drawEllipse(135, 137, 85, 30);
+            ctx.strokeRect(135, 62, 85, 90);
+            ctx.fillRect(136, 64, 83, 90);
+            ctx.strokeStyle = '#000';
+            ctx.fillStyle = "#396693";
+            ctx.drawEllipse(135, 46, 85, 30);
+
+            //draw Bike
+            ctx.strokeStyle = '#72AAB6';
+            ctx.drawEllipse(100, 550, 130, 130);
+            ctx.drawEllipse(350, 550, 130, 130);
+            ctx.drawLine(270, 600, 330, 640);
+            ctx.fillStyle = "#fff";
+            ctx.drawEllipseByCenter(300, 620, 40, 40);
+            ctx.fillStyle = "#90CAD7";
+            ctx.drawEllipse(100, 550, 130, 130);
+            ctx.drawEllipse(350, 550, 130, 130);
+            ctx.drawLine(160, 620, 240, 530);
+            ctx.drawLine(240, 530, 400, 530);
+            ctx.drawLine(160, 620, 300, 620);
+            ctx.drawLine(300, 620, 220, 500);
+            ctx.drawLine(300, 620, 400, 530);
+            ctx.drawLine(190, 500, 250, 500);
+            ctx.drawLine(420, 620, 390, 470);
+            ctx.drawLine(390, 470, 430, 430);
+            ctx.drawLine(390, 470, 330, 500);
+            
+            //draw house
+            ctx.beginPath();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = '#000';
+            ctx.drawRect(600, 150, 320, 240, '#975B5B');
+            ctx.fillStyle = '#000';
+            ctx.fillRect(625, 175, 55, 40);
+            ctx.fillRect(682, 175, 55, 40);
+            ctx.fillRect(625, 217, 55, 40);
+            ctx.fillRect(682, 217, 55, 40);
+            
+            ctx.fillRect(785, 175, 55, 40);
+            ctx.fillRect(842, 175, 55, 40);
+            ctx.fillRect(785, 217, 55, 40);
+            ctx.fillRect(842, 217, 55, 40);
+            
+            ctx.fillRect(785, 280, 55, 40);
+            ctx.fillRect(842, 280, 55, 40);
+            ctx.fillRect(785, 322, 55, 40);
+            ctx.fillRect(842, 322, 55, 40);
+
+            ctx.lineWidth = 2;
+            ctx.strokeRect(640, 296, 85, 95);
+            ctx.fillStyle = '#975B5B';
+            ctx.drawEllipse(641, 276, 83, 43);
+            ctx.drawRect(642, 296, 81, 91, '#975B5B', '#975B5B', 2);
+            ctx.drawLine(682, 276, 682, 390, '#975B5B', '#000');
+            ctx.lineWidth = 4;
+            ctx.drawEllipse(690, 360, 10, 10);
+            ctx.drawEllipse(665, 360, 10, 10);
+
+            ctx.beginPath();
+            ctx.moveTo(600, 149);
+            ctx.lineTo(760, 50);
+            ctx.lineTo(918, 149);
+            ctx.lineTo(600, 149);
+            ctx.fillStyle = '#975B5B';
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.strokeRect(800, 60, 40, 70);
+            ctx.fillRect(802, 62, 36, 70);
+            ctx.drawEllipse(801, 53, 38, 10);
+        }
+
+        CanvasRenderingContext2D.prototype.drawRect = function (fromX, fromY, toX, toY, fill, stroke, lineWidth) {
+            this.beginPath();
+            this.rect(fromX, fromY, toX, toY);
+            if (fill != undefined) {
+                this.fillStyle = fill;
+            }
+            if (stroke != undefined) {
+                this.strokeStyle = stroke;
+            }
+            if (lineWidth != undefined) {
+                this.lineWidth = lineWidth;
+            }
+            this.closePath();
+            this.stroke();
+            this.fill();
+        };
+        
+        CanvasRenderingContext2D.prototype.drawLine = function (fromX, fromY, toX, toY, fill, stroke, lineWidth) {
+            this.beginPath();
+            this.moveTo(fromX, fromY);
+            this.lineTo(toX, toY);
+            if (fill != undefined) {
+                this.fillStyle = fill;
+            }
+            if (stroke != undefined) {
+                this.strokeStyle = stroke;
+            }
+            if (lineWidth != undefined) {
+                this.lineWidth = lineWidth;
+            }
+            this.closePath();
+            this.stroke();
+        };
+        
+        CanvasRenderingContext2D.prototype.drawEllipseByCenter = function(x, y, w, h, isBlank) {
+            this.drawEllipse(x - w / 2.0, y - h / 2.0, w, h, isBlank);
+        };
+
+        CanvasRenderingContext2D.prototype.drawEllipse = function(x, y, w, h, isBlank) {
+            var kappa = .5522848,
+                ox = (w / 2) * kappa, // control point offset horizontal
+                oy = (h / 2) * kappa, // control point offset vertical
+                xe = x + w, // x-end
+                ye = y + h, // y-end
+                xm = x + w / 2, // x-middle
+                ym = y + h / 2; // y-middle
+
+            this.beginPath();
+            this.moveTo(x, ym);
+            this.bezierCurveTo(x, ym - oy, xm - ox, y, xm, y);
+            this.bezierCurveTo(xm + ox, y, xe, ym - oy, xe, ym);
+            this.bezierCurveTo(xe, ym + oy, xm + ox, ye, xm, ye);
+            this.bezierCurveTo(xm - ox, ye, x, ym + oy, x, ym);
+            this.closePath();
+            this.stroke();
+            if (isBlank === undefined || !isBlank) {
+                this.fill();
+            }
+        };
+        
+    </script>
+     <style>
+        canvas {
+            display: inline-block;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body onload="startDraw()">
+    <canvas id="mainCanvas" width="1200px" height="800px"></canvas>
+</body>
+</html>

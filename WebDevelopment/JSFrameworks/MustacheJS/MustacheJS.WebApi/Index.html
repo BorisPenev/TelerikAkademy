@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/table-view.js"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="person-template">	
+		<strong>{{FirstName}} {{LastName}}</strong><br />
+        Grade: {{Grade}}<br />
+        Age: {{Age}}
+    </script>
+    <script type="x-mustache-template" id="marks-template">	
+			<ul>
+				{{#.}} 
+					<li>
+						{{Subject}}: <strong>{{Score}}</strong>							
+					</li>
+				{{/.}}
+				{{^.}}	   
+					<li>
+						This student has no marks, yet	  						
+					</li>
+				{{/.}}
+			</ul>			
+    </script>
+
+    <div id="content"></div>
+    <div id="marks"></div>
+
+    <script>
+        var data = [];
+
+        var renderResult = function (result) {
+            data = result;
+            var personTemplate = Mustache.compile(document.getElementById("person-template").innerHTML);
+            var tableView = controls.getTableView(data, 3, 2);
+            var tableViewHtml = tableView.render(personTemplate);
+            document.getElementById("content").innerHTML = tableViewHtml;
+        };
+        var ajaxCallError = function(error) {
+            alert(error);
+        };
+        $.ajax({
+            url: "api/students",
+            type: "GET",
+            datatype: "json",
+            success: renderResult,
+            error: ajaxCallError
+        });
+        
+        $("body").on("click", "td", function (event) {
+            var item = data[$(this).attr("id")];
+            var marksTemplate = document.getElementById("marks-template").innerHTML;
+            document.getElementById("marks").innerHTML = Mustache.render(marksTemplate, item.Marks);
+        });
+    </script>
+</body>
+</html>

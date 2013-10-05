@@ -1,0 +1,64 @@
+﻿<Window x:Class="ComplexListDataBinding.MvvmLight.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.ignore.com"
+        xmlns:converters="clr-namespace:ComplexListDataBinding.MvvmLight.Converters"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:command="http://www.galasoft.ch/mvvmlight"
+        mc:Ignorable="d ignore"
+        Height="300"
+        Width="300"
+        Title="MVVM Light Application"
+        DataContext="{Binding Countries, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <converters:CollectionCountToVisibilityConverter x:Key="CollectionCountToVisibilityConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <StackPanel>
+        <DataGrid Name="grdCountries" ItemsSource="{Binding Countries}" SelectionMode="Single" SelectedItem="{Binding SelectedItem, Mode=OneWay}" AutoGenerateColumns="False" RowHeaderWidth="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="RowEditEnding">
+                    <command:EventToCommand Command="{Binding OnRowEditEnding}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="AddingNewItem">
+                    <command:EventToCommand Command="{Binding OnAddingNewItem}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="BeginningEdit">
+                    <command:EventToCommand Command="{Binding OnBeginningEdit}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="PreviewKeyDown">
+                    <command:EventToCommand Command="{Binding OnPreviewKeyDown}" PassEventArgsToCommand="True" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id, NotifyOnTargetUpdated=True,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="100" Header="Country ID" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Name}" MinWidth="100" Header="Country Name"/>
+                <DataGridTextColumn Binding="{Binding Language}" MinWidth="100" Header="Country Language"/>
+                <DataGridTextColumn Binding="{Binding Flag}" MinWidth="100" Header="Country Flag URL"/>
+                <DataGridTemplateColumn Header="Country Flag" Width="100*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Flag}" Width="100" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="grdCities" DataContext="{Binding ElementName=grdCountries, Path=SelectedItem}" ItemsSource="{Binding Cities}"
+                  Visibility="{Binding Cities, Converter={StaticResource CollectionCountToVisibilityConverter}, FallbackValue=Collapsed}" AutoGenerateColumns="False" RowHeaderWidth="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id, NotifyOnTargetUpdated=True,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MinWidth="100" Header="Country ID" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Name}" MinWidth="100" Header="City Name"/>
+                <DataGridTextColumn Binding="{Binding Population}" MinWidth="100" Header="City Population"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>

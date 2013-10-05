@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+  <Identity Name="fb72ae4b-0b85-4569-86f9-60a67f2f6a7a" Publisher="CN=Saykor" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>TheHiddenTruth.Store</DisplayName>
+    <PublisherDisplayName>Saykor</PublisherDisplayName>
+    <Logo>Assets\Images\50x50.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TheHiddenTruth.Store.App">
+      <m2:VisualElements DisplayName="The Hidden Truth" Square150x150Logo="Assets\Images\150x150.png" Square30x30Logo="Assets\Images\30x30.png" Description="The Hidden Truth" ForegroundText="light" BackgroundColor="#00b2f0" ToastCapable="true">
+        <m2:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\Images\43x43.png" />
+        <m2:DefaultTile Wide310x150Logo="Assets\Images\310x150.png" Square310x310Logo="Assets\Images\310x310.png" ShortName="Hidden Truth" DefaultSize="wide310x150Logo" Square70x70Logo="Assets\Images\70x70.png">
+          <m2:ShowNameOnTiles>
+            <m2:ShowOn Tile="square150x150Logo" />
+            <m2:ShowOn Tile="wide310x150Logo" />
+            <m2:ShowOn Tile="square310x310Logo" />
+          </m2:ShowNameOnTiles>
+        </m2:DefaultTile>
+        <m2:SplashScreen Image="Assets\Images\1116x540.png" BackgroundColor="#00b2f0" />
+      </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+        <Extension Category="windows.backgroundTasks" EntryPoint="TheHiddenTruth.BackgroundTasks.TileSchedulerTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
+    <DeviceCapability Name="location" />
+  </Capabilities>
+</Package>

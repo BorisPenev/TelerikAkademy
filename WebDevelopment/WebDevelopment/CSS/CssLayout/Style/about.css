@@ -1,0 +1,48 @@
+﻿body 
+{
+    background-color:#3b3b3b;
+    color:#717171;
+    padding:0px;
+    margin:0px;
+}
+ul
+{
+    padding:0px;
+    margin:0px;
+}
+li
+{
+    color:#fff;
+    list-style-type:none;
+    padding:15px;
+    float:left;
+    font-size:22px;
+}
+#login
+{
+    background-color:#323232;
+    padding-bottom:60px;
+    background-image:url("../images/bgLine.png");
+    background-repeat:no-repeat;
+    background-position:0% 100%;
+}
+#content
+{
+    padding-top:1px;
+    padding-left:20px;
+    clear:both;
+    width:568px;
+}
+span
+{
+    color:#dcdcdc;
+}
+h1
+{
+    color:#ffdc18;
+    font-weight:normal;
+}
+#btnLogin
+{
+    padding-top:6px;
+}

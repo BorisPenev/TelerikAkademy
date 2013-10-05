@@ -1,0 +1,18 @@
+﻿@model Information.Models.NewsModel
+
+@{
+    ViewBag.Title = "Culture";
+}
+
+<h1>@ViewBag.Title</h1>
+<div>
+    <ul>
+        @foreach (var item in Model.NewsTitles)
+        {
+            <li>@Html.DisplayFor(modelItem => item)</li>
+        }
+    </ul>
+</div>
+@section Sidebar{
+    Advertisements Advertisements Advertisements
+}

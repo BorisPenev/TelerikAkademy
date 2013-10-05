@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="Grid.css" rel="stylesheet" type="text/css" />
+
+    <!-- jQuery is only used for this test.  It is not required for the Grid class. -->
+    <script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="Grid.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // Global variable to hold a reference to the Grid object
+        var myGrid;
+
+        $(document).ready(function ()
+        {
+            // This commented out code is an example of getting a JSON object from a REST service and passing that in as the data source for the Grid.
+            /*jQuery.support.cors = true;
+            $.getJSON("http://localhost/TestService/TestService/Cars", {}, function (data)
+            {
+            myGrid = new Grid('myGrid', data);
+            });*/
+
+            // Use the following JSON object as the data source.
+            var testData = [
+                { "Id": 22, "make": "Honda", "model": "CR-V", "year": "1998" },
+                { "Id": 23, "make": "Toyota", "model": "Sienna", "year": "2005" },
+                { "Id": 24, "make": "Nissan", "model": "Sentra", "year": "2001" },
+                { "Id": 25, "make": "Toyota", "model": "Corolla", "year": "2011" },
+                { "Id": 26, "make": "Ford", "model": "Focus", "year": "2008" },
+                { "Id": 27, "make": "Dodge", "model": "Charger", "year": "2004" },
+                { "Id": 28, "make": "Ford", "model": "Fiesta", "year": "2013" },
+                { "Id": 29, "make": "Toyota", "model": "Camry", "year": "2008" },
+                { "Id": 30, "make": "Dodge", "model": "Durango", "year": "2004"}];
+
+            // Call the constructor.
+            myGrid = new Grid('myGrid', testData);
+
+            // Now, set the rest of the public properties on the Grid object as necessary before
+            // calling the Build function.
+
+            myGrid.bindFields =
+                [
+                    { "FieldName": "make", "Header": "Make", "Width": 150 },
+                    { "FieldName": "model", "Header": "Model", "Width": 150 },
+                    { "FieldName": "year", "Header": "Year", "Width": 50 }
+                ];
+            myGrid.dataKeyName = 'Id';
+            myGrid.IsSelectable = true;
+            myGrid.IsSortable = true;
+            myGrid.altRowClassName = "alt";
+
+            //myGrid.ScrollBars = true;
+            //myGrid.MaximumHeight = 150;
+
+            myGrid.groupedByKeyName = 'make';
+            //myGrid.groupRowClassName = "row";
+            myGrid.groupExpandImage = true;
+            groupRowHighlight = 'groupHighlight';
+
+            myGrid.Build();
+        });
+
+    </script>
+</head>
+<body>
+    <table id="myGrid" border="0" cellpadding="0" cellspacing="0" class="gridJS"></table>
+    <input type="button" value="Get Key" onclick="alert(myGrid.selectedKey());" />
+ </body>
+</html>

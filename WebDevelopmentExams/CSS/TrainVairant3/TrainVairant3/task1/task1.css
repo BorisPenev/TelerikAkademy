@@ -1,0 +1,122 @@
+﻿body {
+  color: #0094FF;
+  padding: 0;
+  margin: 0;
+}
+#wrapper {
+  padding-top: 189px;
+  padding-left: 10px;
+  width: 960px;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+  font-size: 16px;
+}
+a {
+  text-decoration: none;
+  color: #0094FF;
+}
+ul {
+  list-style-type: none;
+}
+.msg-bar-content {
+  display: none;
+}
+.msg-bar {
+  position: relative;
+}
+.msg-bar li {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5px 15px;
+  background: #aaffef;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #aaffef 20%, #13ffd2 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #aaffef), color-stop(100%, #13ffd2));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #aaffef 20%, #13ffd2 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #aaffef 20%, #13ffd2 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #aaffef 20%, #13ffd2 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #aaffef 20%, #13ffd2 100%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaffef', endColorstr='#13ffd2', GradientType=0);
+  /* IE6-9 */
+
+}
+.msg-bar li:hover {
+  border-top: 5px solid #AAFFEF;
+  margin-top: -5px;
+  background: #00DDB3;
+}
+.msg-bar li:hover div {
+  border: 1px solid black;
+  border-bottom: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  top: -160px;
+  left: 40px;
+  display: inline-block;
+  background: #AAFFEF;
+}
+.msg-bar li:hover div ul {
+  width: 460px;
+}
+.msg-bar li:hover div ul li:hover {
+  background-color: transparent;
+}
+.msg-bar li:hover div ul li {
+  padding-bottom: 0.5px;
+}
+.msg-bar li:hover div ul li.me-item {
+  background-image: url(imgs/me.png);
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  margin: 15px 0px 15px 5px;
+}
+.msg-bar li:hover div ul li.other-item {
+  background-image: url(imgs/male.png);
+  background-repeat: no-repeat;
+  background-position-x: 15px;
+  background-position-y: center;
+  margin: 15px 0px 15px 5px;
+}
+.msg-bar li:hover div ul li span:first-child {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 25px;
+  padding-right: 15px;
+  margin-left: 10px;
+}
+.msg-bar li:hover div ul li span:last-child {
+  position: absolute;
+  right: 0px;
+  width: 315px;
+  text-align: right;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  margin-right: 15px;
+}
+.msg-bar li:hover div ul li:last-child span:last-child {
+  border-bottom: 0px;
+}
+.msg-bar li:hover div ul,
+.msg-bar li:hover div li {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: list-item;
+}

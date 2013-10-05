@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>dada</title>
+    <style>
+        #wrapper {        
+          width: 100%;
+          height: 100%;			
+          position: relative;
+          top: 100px;
+          left: 0;
+		}
+    </style>
+</head>
+    <body>
+        <input type="button" id="btnAddCircle" value="Add new div to circle" />
+        <input type="button" id="btnAddRectangle" value="Add new div to rectangle" />
+
+        <div id="wrapper"></div>
+        <script src="domModule.js"></script>
+        <script src="movingShapes.js"></script>
+        <script src="specialConsole.js"></script>
+        <script>
+            var div = document.createElement("div");
+            //appends div to #wrapper
+            domModule.appendChild(div, "#wrapper");
+            //removes li:first-child from ul
+            //domModule.removeChild("div","div:first-child"); 
+            ////add handler to each a element with class button
+            domModule.addHandler("div", 'click', function () { alert("Clicked"); });
+            for (var i = 0; i < 101; i++) {
+                domModule.appendToBuffer("div", div.cloneNode(true));
+            }
+            for (var i = 0; i < 101; i++) {
+                var navItem = document.createElement("div");
+                domModule.appendToBuffer("#wrapper div", navItem);
+            }
+
+            domModule.addHandler('#btnAddCircle', 'click', function() { movingShapes.add("rect"); });
+            domModule.addHandler('#btnAddRectangle', 'click', function() { movingShapes.add("ellipse"); });
+            
+            specialConsole.writeLine("Message: hello");
+            //logs to the console "Message: hello"
+            specialConsole.writeLine("Message: {0}", "hello");
+            //logs to the console "Message: hello"
+            specialConsole.writeError("Error: {0}", "Something happened");
+            specialConsole.writeWarning("Warning: {0}", "A warning");
+        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+</head>
+<body>
+    <!--Write function that finds the first name and last name of all students with age between 18 and 24. 
+        Use Underscore.js-->
+
+        <script>
+            var Person = Class.create({
+                init: function (fname, lname, age) {
+                    this.fname = fname;
+                    this.lname = lname;
+                    this.age = age;
+                },
+                toString: function () {
+                    return this.fname + " " + this.lname + " " + this.age;
+                }
+            });
+
+            var people = [
+                new Person("Doncho", "Minkov", 19),
+                new Person("Joro", "Georgiev", 48),
+                new Person("Niki", "Kostov", 21),
+                new Person("Svetlin", "Nakov", 16),
+                new Person("Ivaylo", "Kenov", 87)];
+
+            var filteredPeoples = _.filter(people, function (p) {
+                return (p.age > 18 && p.age < 24);
+            });
+
+            _.each(filteredPeoples, function (p) {
+                document.write(p.fname + "<br/>");
+            });
+
+        </script>
+</body>
+</html>

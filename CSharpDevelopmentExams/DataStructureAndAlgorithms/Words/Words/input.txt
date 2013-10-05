@@ -1,0 +1,15 @@
+﻿6
+Telerik Software Academy has several divisions:
+ - Telerik Kids Academy - free training in C++ programming basics in 19 Bulgarian towns
+ - Telerik School Academy - software development for school students - 3 days every month
+ - Telerik Algo Academy - trains school students in algorithms - 2 full days every month
+ - Telerik Software Academy - trains anyone interested in modern software development
+Telerik Software Academy is based in Sofia, Bulgaria.
+7
+goal
+me
+liker
+IT
+Kaspichan
+a
+ring

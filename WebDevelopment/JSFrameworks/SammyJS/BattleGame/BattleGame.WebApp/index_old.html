@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="Styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="Styles/KendoBlueOpal.css" rel="stylesheet" />
+    <link href="Styles/Style.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.css" rel="stylesheet" />
+    <script src="Scripts/jquery-2.0.2.min.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+
+    <!-- start jQuery Grid Plugin -->
+    <link href="Styles/jquery.gridly.css" rel="stylesheet" />
+    <link href="Styles/sample.css" rel="stylesheet" />
+    <script src="Scripts/jquery.gridly.js"></script>
+    <script src="Scripts/sample.js"></script>
+    <script src="Scripts/rainbow.js"></script>
+    <!--<link href="Styles/pqgrid.min.css" rel="stylesheet" />
+        <link href="Styles/themes/Office/pqgrid.css" rel="stylesheet" />
+        <script src="ScriptsJQueryUI/pqgrid.min.js"></script>-->
+    <link href="Styles/ui.jqgrid.css" rel="stylesheet" />
+    <script src="Scripts/grid.locale-en.js"></script>
+    <script src="Scripts/jquery.jqGrid.min.js"></script>
+    <!-- end jQuery Grid Plugin -->
+
+    <!-- start noty -->
+    <link href="Styles/buttons.css" rel="stylesheet" />
+    <script src="Scripts/noty/jquery.noty.js"></script>
+    <script src="Scripts/noty/layouts/topRight.js"></script>
+    <script src="Scripts/noty/layouts/center.js"></script>
+    <script src="Scripts/noty/layouts/topCenter.js"></script>
+    <script src="Scripts/noty/themes/default.js"></script>
+    <!-- end noty -->
+
+    <script src="http://cdn.pubnub.com/pubnub-3.5.3.min.js"></script>
+    <script>(function () {
+    // Init
+    pubnub = PUBNUB.init({
+        publish_key: 'pub-2e41c0cf-3a9d-4d2e-83d2-1d7ae0a12b78',
+        subscribe_key: 'sub-c29f5187-b88e-11e1-9907-d99166562f9b'
+    });
+})();</script>
+
+    <script src="Scripts/helpers.js"></script>
+    <script src="Scripts/sha1.js"></script>
+    <script src="Scripts/q.js"></script>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/http-requester.js"></script>
+    <script src="Scripts/dataProvider.js"></script>
+    <script src="Scripts/controller.js"></script>
+    <script src="Scripts/main.js"></script>
+    <script src="Scripts/notify.js"></script>
+
+    <script>(function () {
+    // LISTEN
+    pubnub.subscribe({
+        channel: "saykor_bulls_cows",
+        message: function (m) {
+            if (m.message === "new-game") {
+                if (m.user !== controller.provider.nickname()) {
+                    controller.loadOpenGames();
+                }
+            }
+        },
+        connect: pubnubPublish
+    });
+})();</script>
+
+</head>
+<body>
+    <div id="wrapper" class="k-content">
+        <div id="organizer" class="ui-widget-content">
+            <button id="btnCreateNewGame">Create New Game</button>
+            <button id="btnReadAllMessages">Read All Messages</button>
+            <ul id="panelbar">
+                <li id="open-games">
+                    <h3>Open Games</h3>
+                </li>
+                <li id="my-games">
+                    <h3>My Games</h3>
+                </li>
+                <li id="in-progress">
+                    <h3>Games In Progress</h3>
+                </li>
+                <li id="scores">
+                    <h3>Scores</h3>
+                </li>
+            </ul>
+            <div id="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>

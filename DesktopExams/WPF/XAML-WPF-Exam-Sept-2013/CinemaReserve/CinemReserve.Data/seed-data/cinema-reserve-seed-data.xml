@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cinemas>
+  <cinema id="1" name="Arena Mladost">
+    <movies>
+      <movie id ="1">
+        
+      </movie>
+    </movies>
+  </cinema>
+</cinemas>

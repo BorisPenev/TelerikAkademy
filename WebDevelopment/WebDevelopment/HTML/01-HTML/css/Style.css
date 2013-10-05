@@ -1,0 +1,71 @@
+﻿body
+{
+    line-height:180%;
+}
+body#blueBG
+{
+    background-color: LightBlue;
+}
+body#blueBG p
+{
+    padding-left: -30px;
+}
+body#inetJava span
+{
+    padding-left: 30px;
+}
+.ulRoman
+{
+    list-style-type:upper-roman;
+}
+.ulAlpha
+{
+    list-style-type:lower-alpha;
+}
+.ulNumber
+{
+    list-style-type:decimal;
+}
+.ulCircle
+{
+    list-style-type:circle;
+}
+.ulCircleFull
+{
+    list-style-type:disc;
+}
+.boldText
+{
+    font-weight:bold;
+}
+.txtCenter
+{
+    text-align:center;
+}
+.txtCenter li
+{
+    display:inline;
+    padding:20px;
+}
+.divPadding
+{
+    padding-left:20px;
+}
+table
+{
+    border-collapse:collapse;
+    width:100%;
+}
+table, th, td
+{
+    border: 1px solid black;
+}
+td
+{
+   vertical-align:top;
+   padding:10px;
+}
+img
+{
+    border-width:0px;
+}

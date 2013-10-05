@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>[HTML5] Feature detection - the good. - jsFiddle demo by ncuesta</title>
+
+    <script src="scripts/external/jquery-2.0.3.js"></script>
+    <script src="scripts/external/ua-parser.js"></script>
+    <script src="scripts/external/modernizr-2.6.2-full.js"></script>
+
+    <style type='text/css'>
+        body {
+            font-family: Trebuchet MS, Arial, Verdana, sans-serif;
+        }
+
+        .heading {
+            background-color: #eee;
+        }
+
+        table {
+            border: 1px solid #ccc;
+        }
+
+            table thead th {
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+            }
+
+            table tbody th {
+                font-family: monospace;
+                border-right: 1px solid #ccc;
+            }
+
+            table td,
+            table th {
+                padding: .25em;
+            }
+
+        aside {
+            text-align: right;
+            color: #aaa;
+            font-size: 80%;
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+
+    <script type='text/javascript'>
+        // Populate the #features table when the document is ready
+        jQuery(function ($) {
+            var parser = new UAParser();
+            var result = parser.getResult();
+            $('#details').text(
+                result.browser.name + ' ' +
+                result.browser.version + ' ' +
+                result.os.name + ' ' +
+                result.device.type);
+
+            var target = $('#features > tbody');
+
+            var traverse = function (object, prefix) {
+                prefix = prefix ? prefix + '.' : '';
+
+                for (property in object) {
+                    if (typeof object[property] == 'object') {
+                        traverse(object[property], prefix + property);
+                    } else if (typeof object[property] == 'boolean') {
+                        var
+                            tr = $('<tr />'),
+                            name = $('<th />', {
+                                text: prefix + property
+                            }),
+                            value = $('<td />', {
+                                text: object[property] ? 'Yes' : 'Nope'
+                            });
+
+                        target.append(tr.append(name).append(value));
+                    }
+                }
+            };
+
+            traverse(Modernizr, 'Modernizr');
+        });
+
+    </script>
+
+
+</head>
+<body>
+    <table id="features">
+        <thead>
+            <tr>
+                <th colspan="2" class="heading">
+                    <p>Test your browser for HTML5 support!</p>
+                    <p id="details"></p>
+                    <aside>(<a href="http://modernizr.com">Modernizr</a> version)</aside>
+                </th>
+            </tr>
+            <tr>
+                <th>Feature</th>
+                <th>Supported?</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
+

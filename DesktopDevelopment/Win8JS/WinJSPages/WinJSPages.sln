@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "WinJSPages.Wiki", "WinJSPages.Wiki\WinJSPages.Wiki.jsproj", "{F2842D81-2269-46D7-9D42-7AC9B98F91B0}"
+EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "WinJSPages.Blend", "WinJSPages.Blend\WinJSPages.Blend.jsproj", "{F174F621-FC16-4246-9CE0-FB93B14430F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|ARM.Build.0 = Debug|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x64.ActiveCfg = Debug|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x64.Build.0 = Debug|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x64.Deploy.0 = Debug|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x86.ActiveCfg = Debug|x86
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x86.Build.0 = Debug|x86
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Debug|x86.Deploy.0 = Debug|x86
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|ARM.ActiveCfg = Release|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|ARM.Build.0 = Release|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|ARM.Deploy.0 = Release|ARM
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x64.ActiveCfg = Release|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x64.Build.0 = Release|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x64.Deploy.0 = Release|x64
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x86.ActiveCfg = Release|x86
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x86.Build.0 = Release|x86
+		{F2842D81-2269-46D7-9D42-7AC9B98F91B0}.Release|x86.Deploy.0 = Release|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|ARM.Build.0 = Debug|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x64.ActiveCfg = Debug|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x64.Build.0 = Debug|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x64.Deploy.0 = Debug|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x86.ActiveCfg = Debug|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x86.Build.0 = Debug|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Debug|x86.Deploy.0 = Debug|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|ARM.ActiveCfg = Release|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|ARM.Build.0 = Release|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|ARM.Deploy.0 = Release|ARM
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x64.ActiveCfg = Release|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x64.Build.0 = Release|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x64.Deploy.0 = Release|x64
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x86.ActiveCfg = Release|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x86.Build.0 = Release|x86
+		{F174F621-FC16-4246-9CE0-FB93B14430F9}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.7.1.js"></script>
+    <script src="script.js"></script>
+    <style>
+        span{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    01.Write a JavaScript function reverses string and returns it.Example: "sample"  "elpmas".<br />
+    Write a number: <input id="txtReverseNumber" type="text" value="sample" />
+    <input id="btnReverseNumber" type="submit" value="submit" /> <span id="pnlReverseNumber"></span>
+    <hr />
+    
+    02. Write a JavaScript function to check if in a given expression the brackets are put correctly.<br />
+        Example of correct expression: ((a+b)/5-d).<br />
+        Example of incorrect expression: )(a+b)).<br />
+    Add text: <input id="txtCheckCorrectBrackets" type="text" value=")(a+b))" />
+    <input id="btnCheckCorrectBrackets" type="submit" value="submit" /> <span id="pnlCheckCorrectBrackets"></span>
+    <hr />
+
+    03. Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).<br />
+		Example: The target substring is "in". The text is as follows:<br />
+            We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.<br />
+	    The result is: 9.<br />
+    <input id="btnCountSubstring" type="submit" value="submit" /> <span id="pnlCountSubstring"></span>
+    <hr />
+
+    04. You are given a text. Write a function that changes the text in all regions:<br />
+    <upcase>text</upcase> to uppercase.<br />
+    <lowcase>text</lowcase> to lowercase<br />
+    <mixcase>text</mixcase> to mix casing(random)<br />
+    We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.<br />
+		The expected result:<br />
+    We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.<br />
+      Regions can be nested<br />
+    <input id="btnToUpperRegionOfString" type="submit" value="Run Test" /> <span id="pnlToUpperRegionOfString"></span>
+    <hr />
+
+    05. Write a function that replaces non breaking white-spaces in a text with &nbsp;<br />
+    Write a number array separated by comma: <input id="txtReplaceWhiteSpace" type="text" value="We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days." /> 
+    <input id="btnReplaceWhiteSpace" type="submit" value="submit" /> <span id="pnlReplaceWhiteSpace"></span>
+    <hr />
+
+    06. Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:<br />
+    <textarea cols="200"><html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html></textarea><br />
+    result:<br />
+    Sample sitetextmore textand more...in body<br />
+    <input id="btnExtractText" type="submit" value="submit" /> <span id="pnlExtractText"></span>
+    <hr />
+
+    07. Write a script that parses an URL address given in the format:<br />
+    [protocol]://[server]/[resource]<br />
+    and extracts from it the [protocol], [server] and [resource] elements. Return the elements in a JSON object.For example from the URL http://www.devbg.org/forum/index.php the following information should be extracted:<br />
+    {protocol: "http", server: "www.devbg.org", resource: "/forum/index.php"}<br />
+    Write a url: <input id="txtParseUri" type="text" value="http://www.devbg.org/forum/index.php" />
+    <input id="btnParseUri" type="submit" value="submit" /> <span id="pnlParseUri"></span>
+    <hr />
+
+    08. Write a JavaScript function that replaces in a HTML document given as string all the tags <a href="…">…</a> with corresponding tags [URL=…]…/URL]. Sample HTML fragment:
+    <textarea cols="200"><p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p></textarea>
+    <textarea cols="200"><p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p></textarea>
+    <br />
+    <input id="btnReplaceAnhorTag" type="submit" value="submit" /> <span id="pnlReplaceAnhorTag"></span>
+    <hr />
+
+    09. Write a function for extracting all email addresses from given text. All substrings that match the format  should be recognized as emails. Return the emails as array of strings.<br />
+    Write a text: <input id="txtExtractEmail" type="text" value="dsadasd none@none.no fdfsd fdsfsd none@none.no" /> <br />
+    <input id="btnExtractEmail" type="submit" value="submit" /> <span id="pnlExtractEmail"></span>
+    <hr />
+
+    10. Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".<br />
+    <input id="btnFindPilindromWords" type="submit" value="submit" /> <span id="pnlFindPilindromWords"></span>
+    <hr />
+
+    11. Write a function that formats a string using placeholders:<br />
+        var str = stringFormat("Hello {0}!","Peter");<br />
+        //str = "Hello Peter!";<br />
+    The function should work with up to 30 placeholders and all types<br />
+        var format = "{0}, {1}, {0} text {2}";<br />
+        var str = stringFormat(format,1,"Pesho","Gosho");<br />
+        //str = "1, Pesho, 1 text Gosho"<br />
+
+        <input id="btnStringFormat" type="submit" value="submit" /> <span id="pnlStringFormat"></span>
+    <hr />
+
+        12. 
+</body>
+</html>

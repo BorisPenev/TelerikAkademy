@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+</head>
+    <body>
+        <!--By an array of people find the most common first and last name. Use underscore-->
+
+        <script>
+            var Person = Class.create({
+                init: function (fname, lname) {
+                    this.fname = fname;
+                    this.lname = lname;
+                },
+                toString: function () {
+                    return this.fname + " " + this.lname;
+                }
+            });
+
+            var people = [
+                new Person("Doncho", "Minkov", 18),
+                new Person("Joro", "Georgiev", 48),
+                new Person("Niki", "Georgiev", 21),
+                new Person("Ivaylo", "Nakov", 16),
+                new Person("Ivaylo", "Kenov", 87)];
+
+            var groupByFname = _.groupBy(people, "fname");
+            
+            var map = _.map(groupByFname, function (item, key) {
+                return [key, item.length];
+            });
+            var order = _.sortBy(map, function (i) {
+                return i[1];
+            });
+            document.write(_.last(order));
+            
+
+            var groupByLname = _.groupBy(people, "lname");
+
+            map = _.map(groupByLname, function (item, key) {
+                return [key, item.length];
+            });
+            order = _.sortBy(map, function (i) {
+                return i[1];
+            });
+            document.write(_.last(order));
+
+        </script>
+    
+    </body>
+</html>

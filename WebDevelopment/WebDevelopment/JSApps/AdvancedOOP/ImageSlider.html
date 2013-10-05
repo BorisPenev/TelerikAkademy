@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/SliderStyle.css" rel="stylesheet" />
+    <script src="Scripts/prototypeCreateExtend.js"></script>
+    <script src="Scripts/ImageSlider.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="imageWrapper"></div>
+        <div id="preview"></div>
+    </div>
+    <script>
+        var slideControler = ImageSlider.createSlideControler();
+        slideControler.init("imageWrapper", "preview");
+        slideControler.addImage("image3", "Images/Thumb/image3.jpg", "Images/Large/image3.jpg");
+        slideControler.addImage("image4", "Images/Thumb/image4.jpg", "Images/Large/image4.jpg");
+        slideControler.addImage("image5", "Images/Thumb/image5.jpg", "Images/Large/image5.jpg");
+        slideControler.addImage("image6", "Images/Thumb/image6.jpg", "Images/Large/image6.jpg");
+        slideControler.addImage("image7", "Images/Thumb/image7.jpg", "Images/Large/image7.jpg");
+        slideControler.addImage("image8", "Images/Thumb/image8.jpg", "Images/Large/image8.jpg");
+        slideControler.addImage("image9", "Images/Thumb/image9.jpg", "Images/Large/image9.jpg");
+        slideControler.renderImages();
+    </script>
+</body>
+</html>

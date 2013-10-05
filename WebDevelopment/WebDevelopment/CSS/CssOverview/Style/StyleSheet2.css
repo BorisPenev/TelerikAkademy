@@ -1,0 +1,67 @@
+body 
+{
+    margin: 0px;
+    padding: 0px;
+    font-family:Arial;
+    font-size: 14px;
+}
+table
+{
+    border-spacing:0px;
+    padding:0px;
+}
+th
+{
+    color: #fff;
+    background-color: #54b706;
+    text-align:left;
+    font-weight:normal;
+    border-bottom: 1px solid #3b9107;
+    border-left: 1px solid #3a8e0a;
+    border-right: 1px solid #fff;
+}
+td
+{
+    border-left: 1px solid #c9c8b2;
+}
+table, th, td
+{
+    padding: 3px;
+}
+tr:nth-child(even) 
+{
+    background: #FFF
+}
+tr:nth-child(odd) 
+{
+    background: #ececd8
+}
+.col1
+{
+    width:120px;
+}
+.col2
+{
+    width:100px;
+}
+.flag-Germany
+{
+    background-image:url('../Images/flag_germany.gif');
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    padding-left: 26px;
+}
+.flag-Mexico
+{
+    background-image:url('../Images/flag-mexico.gif');
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    padding-left: 26px;
+}
+.flag-UK
+{
+    background-image:url('../Images/flag_uk.gif');
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    padding-left: 26px;
+}

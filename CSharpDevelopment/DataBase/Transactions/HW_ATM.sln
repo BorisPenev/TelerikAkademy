@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Models", "ATM.Models\ATM.Models.csproj", "{4E5E452D-B569-41F6-9976-6B394E04DE86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Data", "ATM.Data\ATM.Data.csproj", "{202E9966-6F24-4393-BB2E-A1F6CBDFBB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATM.Client", "ATM.Client\ATM.Client.csproj", "{77293C90-9048-4D5C-88DC-CA99FB63BE3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E5E452D-B569-41F6-9976-6B394E04DE86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5E452D-B569-41F6-9976-6B394E04DE86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5E452D-B569-41F6-9976-6B394E04DE86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5E452D-B569-41F6-9976-6B394E04DE86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{202E9966-6F24-4393-BB2E-A1F6CBDFBB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202E9966-6F24-4393-BB2E-A1F6CBDFBB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202E9966-6F24-4393-BB2E-A1F6CBDFBB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202E9966-6F24-4393-BB2E-A1F6CBDFBB56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77293C90-9048-4D5C-88DC-CA99FB63BE3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77293C90-9048-4D5C-88DC-CA99FB63BE3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77293C90-9048-4D5C-88DC-CA99FB63BE3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77293C90-9048-4D5C-88DC-CA99FB63BE3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,24 @@
+﻿@model Information.Models.TVmodel
+
+@{
+    ViewBag.Title = "TV";
+}
+
+<h1>@ViewBag.Title</h1>
+<div>
+    <ul>
+        @foreach (var item in Model.TvTitles)
+        {
+            <li>@Html.DisplayFor(modelItem => item)</li>
+        }
+    </ul>
+</div>
+<div>
+    @if (Model.Date != null)
+    {
+        @Html.Partial("_TVPartial", Model);
+    }
+</div>
+@section Sidebar{
+    Advertisements Advertisements Advertisements
+}

@@ -1,0 +1,45 @@
+﻿<Window x:Class="ComplexListDataBinding.ProductStore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels="clr-namespace:ComplexListDataBinding.ProductStore.ViewModels"
+        Title="MainWindow" WindowState="Maximized">
+    <Window.DataContext>
+        <viewModels:ProductsViewModel />
+    </Window.DataContext>
+    <StackPanel DataContext="{Binding}">
+        <ComboBox Name="ddlCategories" ItemsSource="{Binding Categories}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectedValue="{Binding SelectedProduct.CategoryId}"></ComboBox>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Product Id:"></TextBlock>
+            <TextBox Name="txtProductId" Width="200" Text="{Binding SelectedProduct.Id, Mode=OneWay}"></TextBox>
+            <Button Command="{Binding GetProduct}" CommandParameter="{Binding ElementName=txtProductId, Path=Text}">Get Product</Button>
+            <Button Command="{Binding ClearForm}">Clear Form</Button>
+            <Button Command="{Binding AddProduct}">Add Product</Button>
+        </StackPanel>
+
+        <Grid Background="Gray" DataContext="{Binding SelectedProduct}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Model Number:"></TextBlock>
+            <TextBox Grid.Column="1" Name="txtModelNumber" Text="{Binding ModelName}" Width="200"></TextBox>
+
+            <TextBlock Grid.Row="1" Text="Model Name:"></TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="txtModelName" Text="{Binding ModelNumber}" Width="200"></TextBox>
+
+            <TextBlock Grid.Row="2" Text="Unit Cost:"></TextBlock>
+            <TextBox Grid.Row="2" Grid.Column="1" Name="txtUnitCost" Text="{Binding Coast}" Width="200"></TextBox>
+
+            <TextBlock Grid.Row="3" Text="Description:"></TextBlock>
+            <TextBox Grid.Row="4" Grid.ColumnSpan="2" Name="txtDescription" Text="{Binding Desctiption}" Width="200" Height="200" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+        </Grid>
+    </StackPanel>
+</Window>

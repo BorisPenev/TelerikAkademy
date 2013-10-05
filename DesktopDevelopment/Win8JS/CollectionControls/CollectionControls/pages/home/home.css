@@ -1,0 +1,57 @@
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.computer-template {
+    display: inline-block;
+    margin: 40px;
+}
+
+.grdRepeater {
+    display: inline-block;
+    margin: 40px;
+    overflow:scroll;
+}
+.pnlCreateComputer {
+    display: inline-block;
+    margin: 40px;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+#pnlMain {
+	display: -ms-inline-grid;
+	-ms-grid-columns: 380px 1fr;
+}
+
+#pnlCreateComputer {
+	-ms-grid-column: 1;
+}
+
+#grdListView {
+	-ms-grid-column: 2;
+	width: 84%;
+	height: 600px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.listViewItem {
+	width: 200px;
+	height: 100%;
+	padding: 5px;
+	margin: 5px;
+}

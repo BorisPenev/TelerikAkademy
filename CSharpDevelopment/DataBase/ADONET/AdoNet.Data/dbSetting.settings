@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AdoNet.Data" GeneratedClassName="dbSetting">
+  <Profiles />
+  <Settings>
+    <Setting Name="SqlConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=localhost;Initial Catalog=NORTHWND;Persist Security Info=True;User ID=nw;Password=123456; MultipleActiveResultSets=True</Value>
+    </Setting>
+    <Setting Name="MySqlConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Server=localhost;Database=bookstore;Uid=books;Pwd=test1234;</Value>
+    </Setting>
+    <Setting Name="SQLiteConnectionString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=D:\Projects\VisualStudio2012\Telerik\TelerikAkademy\CSharpDevelopment\DataBase\ADONET\ADONET\ADONET.WebApp\books.db;Version=3;</Value>
+    </Setting>
+    <Setting Name="MONGOLAB_URI" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://127.0.0.1/BookStore</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

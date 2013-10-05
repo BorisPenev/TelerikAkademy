@@ -1,0 +1,54 @@
+﻿body 
+{
+    background-color:#eeeeee;
+    font-family:Arial;
+    font-size:14px;
+}
+h1
+{
+    padding-left:15px;
+    padding-bottom:15px;
+    font-size:18px;
+    font-weight:normal;
+}
+ul
+{
+    padding:0px;
+    margin:0px;
+}
+li
+{
+    border:1px solid #000;
+    list-style-type:none;
+    margin:15px;
+    padding:15px;
+    vertical-align:top;
+    width:394px;
+    min-height:105px;
+}
+img
+{
+    border:1px solid #000;
+    float:left;
+    margin-right:15px;
+}
+.action
+{
+    padding-top:10px;
+    margin:5px;
+    text-align:right;
+}
+input
+{
+    background-image:url("../images/bgButton.png");
+    background-repeat:no-repeat;
+    border:2px outset #870002;
+    background-color:#cc0000;
+    color:#fff;
+    padding:3px 20px;
+}
+input:hover
+{
+    border:2px inset #870002;
+    cursor:pointer;
+}

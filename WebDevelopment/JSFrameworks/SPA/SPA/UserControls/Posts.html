@@ -1,0 +1,10 @@
+﻿<script type="x-mustache-template" id="post-list-template">	
+    <li id="{{Id}}" tag="{{CreatedBy}}">
+        <a href="#/post/{{Id}}">{{Title}}</a>
+        <p>{{Content}}</p>
+        <p>{{#tags}}[ <a href="#/posts/{{Id}}">{{Name}}</a> ] {{/tags}}</p>
+    </li>
+</script>
+
+<ul id="grdPostList">
+</ul>

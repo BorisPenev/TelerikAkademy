@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.0.0.js"></script>
+    <script src="Scripts/TreeView.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#treeViewContainer').treeView();
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul id="treeViewContainer">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3
+                <ul>
+                    <li>Item 3.1</li>
+                    <li>Item 3.2</li>
+                    <li>Item 3.3
+                        <ul>
+                            <li>Item 3.3.1</li>
+                            <li>Item 3.3.2</li>
+                        </ul>
+                    </li>
+                    <li>Item 3.4</li>
+                </ul>
+            </li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+    </div>
+</body>
+</html>

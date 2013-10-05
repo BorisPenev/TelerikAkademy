@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web Form</title>
+    <style type="text/css">
+        body
+        {
+            font-size:14px;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        table, th, td
+        {
+            border: 1px solid #ccc;
+            padding: 3px;
+        }
+        tfoot
+        {
+            background-color: #d1ede1;
+            text-align: center;
+        }
+        .labels
+        {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <form name="formProfile" method="post" action="register.aspx">
+    <table>
+        <colgroup>
+            <col style="width: 150px;" />
+            <col style="width: 140px" />
+            <col style="width: 30px;" />
+            <col style="width: 30px" />
+        </colgroup>
+        <tbody>
+            <tr>
+                <td class="labels">
+                    <label for="txtLastName">
+                        Last Name</label>
+                </td>
+                <td colspan="3">
+                    <input id="txtLastName" type="text" name="LastName" size="44" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtFirstName">
+                        First Name</label>
+                </td>
+                <td colspan="3">
+                    <input id="txtFirstName" type="text" name="FirstName" size="44" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtAddress">
+                        Address</label>
+                </td>
+                <td colspan="3">
+                    <input id="txtAddress" type="text" name="Address" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtCity">
+                        City</label>
+                </td>
+                <td>
+                    <input id="txtCity" type="text" name="City" size="28" />
+                </td>
+                <td class="labels">
+                    <label for="txtState">
+                        State</label>
+                </td>
+                <td>
+                    <input id="txtState" type="text" name="State" size="4" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtZip">
+                        Zip/Postal Code</label>
+                </td>
+                <td colspan="3">
+                    <input id="txtZip" type="text" name="Zip" size="10" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="ddlCountry">
+                        Country</label>
+                </td>
+                <td colspan="3">
+                    <select name="Country" id="ddlCountry">
+                        <option value="USA">United States of America</option>
+                        <option value="CA">Canada</option>
+                        <option value="BG" selected="selected">Bulgaria</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtPhoneCountry">
+                        Phone ( country code, area code, number )</label>
+                </td>
+                <td colspan="3">
+                    ( +<input id="txtPhoneCountry" type="text" name="PhoneCountry" maxlength="3" size="3" /> )
+                    <input id="txtPhoneArea" type="text" name="PhoneArea" maxlength="4" size="4" />
+                    <input id="txtPhoneNumber" type="text" name="PhoneNumber" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtEmail">
+                        E-mail</label>
+                </td>
+                <td colspan="3">
+                    <input id="txtEmail" type="text" name="Email" required pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{2,}.[a-zA-Z0-9_]{2,4}" size="44" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtMonth">
+                        Birth date</label>
+                </td>
+                <td colspan="3">
+                    <label for="txtMonth">
+                        Month</label>
+                    <input id="txtMonth" type="text" name="Month" maxlength="2" size="2" />
+                    <label for="txtDay">
+                        Day</label>
+                    <input id="txtDay" type="text" name="Day" maxlength="2" size="2" />
+                    <label for="txtYear">
+                        Year(4 digit)</label>
+                    <input id="txtYear" type="text" name="Year" maxlength="4" size="4" />
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="ddlGender">
+                        Gender</label>
+                </td>
+                <td colspan="3">
+                    <select name="Gender" id="ddlGender">
+                        <option value="m" selected="selected">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="rbtnStartingDateSpring">
+                        Starting date</label>
+                </td>
+                <td colspan="3">
+                    <input name="StartingDate" type="radio" id="rbtnStartingDateSpring" value="m" />
+                    <label for="rbtnStartingDateSpring">
+                        Spring 2006</label>
+                    <input name="StartingDate" type="radio" id="rbtnStartingDateSummer" value="f" />
+                    <label for="rbtnStartingDateSummer">
+                        Summer 2006</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="labels">
+                    <label for="txtComments">
+                        Comments/Questions</label>
+                </td>
+                <td colspan="3">
+                    <textarea id="txtComments" name="Comments" cols="30" rows="4"></textarea>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <input id="btnSubmit" type="submit" value="Submit" />
+                    <input id="btnClear" type="reset" value="Clear This Form" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    </form>
+</body>
+</html>

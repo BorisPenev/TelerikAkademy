@@ -1,0 +1,113 @@
+.imageBackground(@img)
+{
+	padding-left:40px;
+	padding-top:5px;
+	vertical-align:bottom;
+	background-image:url("@{img}");
+	background-repeat:no-repeat;
+	background-position-y:9px;
+}
+
+body, div, hgroup, h3, h2, p
+{
+	padding:0;
+	margin:0;
+}
+#wrapper {
+    padding: 20px;
+    width: 960px;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+
+
+
+    & > div {
+        min-height: 255px;
+        float: left;
+        width: 140px;
+        border: 1px solid #D3D7DA;
+        border-top: 2px solid #D3D7DA;
+        border-bottom: 2px solid #D3D7DA;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-top: 5px;
+
+        h2, h3 {
+            font-size: 1em;
+        }
+
+        p {
+            padding-top: 16px;
+            padding-bottom: 5px;
+        }
+
+        .yellowBox {
+			border:1px solid #FFFF00;
+            margin-top: -5px;
+            background-color: #FFFFDD;
+
+            a {
+                display: inline;
+            }
+        }
+    }
+
+        & > div:nth-child(1) hgroup {
+            .imageBackground("imgs/install.png");
+        }
+
+        & > div:nth-child(2) hgroup {
+            .imageBackground("imgs/tuneUp.png");
+        }
+
+        & > div:nth-child(3) hgroup {
+            .imageBackground("imgs/manage.png");
+        }
+
+        & > div:nth-child(4) hgroup {
+            .imageBackground("imgs/openSource.png");
+        }
+
+        & > div:nth-child(5) hgroup {
+            .imageBackground("imgs/twitter.png");
+        }
+
+        & > div:nth-child(6) hgroup {
+            .imageBackground("imgs/about.png");
+        }
+
+        & > div:nth-last-child(-n+3) hgroup {
+            padding-top: 25px;
+        }
+
+        & > div:nth-child(odd) {
+            border-top: 2px solid #D3D7DA;
+            border-bottom: 2px solid #D3D7DA;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        & > div:nth-child(even) {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#f1f2f3));
+            min-height: 275px;
+            border: 2px solid #D3D7DA;
+        }
+
+        & > div:first-child {
+            border-left: 2px solid #D3D7DA;
+        }
+
+        & > div:last-child {
+            border-right: 2px solid #D3D7DA;
+        }
+}
+
+a {
+    display:block;
+    color: #CE2D2F;
+    text-decoration: none;
+
+    span {
+        text-transform: uppercase;
+    }
+}

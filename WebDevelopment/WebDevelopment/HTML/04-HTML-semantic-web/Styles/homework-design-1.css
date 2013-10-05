@@ -1,0 +1,21 @@
+﻿table {
+    padding:0px;
+    margin:0px;
+    border-collapse:collapse;
+}
+tr, th, td {
+    border:2px solid black;
+    text-align:center;
+    padding:5px;
+}
+header {
+    width: 100%;
+    overflow: hidden;
+}
+.logo {
+    float: left;
+}
+.header {
+    text-align: center;
+    padding-top: 30px;
+}

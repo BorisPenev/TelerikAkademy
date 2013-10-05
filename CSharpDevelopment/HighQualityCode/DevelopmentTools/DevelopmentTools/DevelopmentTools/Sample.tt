@@ -1,0 +1,4 @@
+﻿<#@ template language="C#" #>
+<#@ output extension=".txt" #>
+ 
+in the year <#= DateTime.Now.Year.ToString() #>

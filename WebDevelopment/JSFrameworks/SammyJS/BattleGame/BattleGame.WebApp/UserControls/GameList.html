@@ -1,0 +1,18 @@
+﻿<script type="x-mustache-template" id="game-list-item-template">	
+		<ul>
+			{{#.}} 
+				<li id="{{id}}" tag="{{creator}}">
+                    {{title}}
+                </li>
+			{{/.}}
+			{{^.}}	   
+				<li>
+					This student has no marks, yet	  						
+				</li>
+			{{/.}}
+		</ul>			
+</script>
+
+<div style="width:340px; height:200px; overflow-y: scroll;">
+    <ul id="grdGameList"></ul>
+</div>

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControls", "LayoutControls\LayoutControls.csproj", "{92E53CF0-7C55-4A9F-9F8E-33BD50A830D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControls.Tabs", "LayoutControls.Tabs\LayoutControls.Tabs.csproj", "{2ED51B61-D08C-4FA0-8935-44606EC0E129}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControls.Silverlight", "LayoutControls.Silverlight\LayoutControls.Silverlight.csproj", "{E51D9E05-AA5C-4287-9052-02D25D8662B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutControls.Silverlight.Web", "LayoutControls.Silverlight.Web\LayoutControls.Silverlight.Web.csproj", "{B918919B-6CB7-4108-9224-C1A29CDEC1AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92E53CF0-7C55-4A9F-9F8E-33BD50A830D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92E53CF0-7C55-4A9F-9F8E-33BD50A830D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92E53CF0-7C55-4A9F-9F8E-33BD50A830D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92E53CF0-7C55-4A9F-9F8E-33BD50A830D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ED51B61-D08C-4FA0-8935-44606EC0E129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED51B61-D08C-4FA0-8935-44606EC0E129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED51B61-D08C-4FA0-8935-44606EC0E129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED51B61-D08C-4FA0-8935-44606EC0E129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51D9E05-AA5C-4287-9052-02D25D8662B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51D9E05-AA5C-4287-9052-02D25D8662B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51D9E05-AA5C-4287-9052-02D25D8662B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51D9E05-AA5C-4287-9052-02D25D8662B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B918919B-6CB7-4108-9224-C1A29CDEC1AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B918919B-6CB7-4108-9224-C1A29CDEC1AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B918919B-6CB7-4108-9224-C1A29CDEC1AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B918919B-6CB7-4108-9224-C1A29CDEC1AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

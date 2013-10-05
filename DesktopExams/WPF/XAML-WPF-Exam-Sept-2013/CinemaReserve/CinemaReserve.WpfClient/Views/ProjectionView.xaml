@@ -1,0 +1,28 @@
+﻿<UserControl xmlns:Views="clr-namespace:CinemaReserve.WpfClient.Views"  
+             x:Class="CinemaReserve.WpfClient.Views.ProjectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="lbProjectionsItemTemplate">
+            <Grid Style="{StaticResource GridMarginBegavior}" Background="#82b517">
+                <TextBlock Text="{Binding Time}"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical">
+            <TextBlock>Projections</TextBlock>
+            <ListBox ItemsSource="{Binding Projections}" HorizontalAlignment="Left"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ItemTemplate="{StaticResource lbProjectionsItemTemplate}"
+                         SelectionMode="Single" SelectedItem="{Binding SelectedProjection}"
+                          Height="500" Margin="5"/>
+        </StackPanel>
+        <Views:ProjectionDetails DataContext="{Binding}" Visibility="{Binding SelectedProjection, Converter={StaticResource NullOrEmptyToVisibilityConverter}}" />
+    </StackPanel>
+</UserControl>

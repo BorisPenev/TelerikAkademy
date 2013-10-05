@@ -1,0 +1,53 @@
+﻿<Window x:Class="CinemaReserve.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:viewModels="clr-namespace:CinemaReserve.WpfClient.ViewModels"
+        xmlns:views="clr-namespace:CinemaReserve.WpfClient.Views"
+        xmlns:behavior="clr-namespace:CinemaReserve.WpfClient.Behavior"
+        Title="MainWindow" WindowState="Maximized" Name="pnlMainWindow">
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type viewModels:CinemaViewModel}">
+            <views:CinemaView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:MovieViewModel}">
+            <views:MovieView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:SearchViewModel}">
+            <views:SearchView/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TabHeaderTemplate">
+            <Grid Width="Auto" Height="Auto">
+                <ContentPresenter ContentSource="Header" Margin="3" 
+                        Content="{Binding Path=Name}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <ContentPresenter.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Green"/>
+                        </Style>
+                    </ContentPresenter.Resources>
+                </ContentPresenter>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TabContentTemplate">
+            <ContentControl Content="{Binding CurrentViewModel}" />
+        </DataTemplate>
+
+    </Window.Resources>
+    <telerik:RadBusyIndicator DataContext="{Binding Source={StaticResource AppConfiguration}}" x:Name="BIndicator" IsBusy="{Binding IsBusy}" BusyContent="{Binding IsBusyMessage}">
+        <StackPanel DataContext="{Binding ElementName=pnlMainWindow, Path=DataContext}">
+            <TabControl ItemsSource="{Binding MenuItems}" IsSynchronizedWithCurrentItem="True"
+                    ItemTemplate="{StaticResource TabHeaderTemplate}"
+                    ContentTemplate="{StaticResource TabContentTemplate}"
+                    SelectedItem="{Binding CurrentViewModel}" VerticalContentAlignment="Top"/>
+        </StackPanel>
+    </telerik:RadBusyIndicator>
+</Window>

@@ -1,0 +1,174 @@
+﻿body
+{
+    font-family:Tahoma;
+    font-size:14px;
+}
+.pnlMainTable
+{
+    background-image:url('../images/bgTop.png');
+    background-repeat:repeat-x;
+    background-color:#c0ddfa;
+    border:1px solid #000;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding:2px;
+    margin:0px;
+}
+td.pnlMainTable
+{
+    height:26px;
+}
+.pnlMainTable td
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}   
+#calculatorIcon
+{
+    float:left;
+    background-image:url('../images/calcIco.png');
+    background-repeat: no-repeat;
+    padding-left:20px;
+    margin-left:5px;
+    height:26px;
+}
+#pnlMinimize
+{
+    float:right;
+    height:26px;
+    background-image:url('../images/minimize.png');
+    background-repeat: no-repeat;
+    margin-top:-4px;
+    padding-left:15px;
+    width:12px;
+}
+#pnlMaximize
+{
+    float:right;
+    height:26px;
+    background-image:url('../images/maximize.png');
+    background-repeat: no-repeat;
+    margin-top:-4px;
+    padding-left:10px;
+    width:16px;
+}
+#pnlClose
+{
+    float:right;
+    height:26px;
+    background-image:url('../images/close.png');
+    background-repeat: no-repeat;
+    padding-left:20px;
+    margin-top:-4px;
+    width:29px;
+}
+.pnlNav
+{
+    background-image:url('../images/bgNav.png');
+    background-repeat: repeat-x;
+}
+ul
+{
+    padding:0px;
+    margin:0px;
+}
+li
+{
+    padding-left:10px;
+    padding-right:5px;
+    float: left;
+    list-style-type:none;
+}
+li:first-letter
+{
+    text-decoration:underline;
+} 
+.pnlMiddle
+{
+    border:1px solid #000;
+    border-spacing:0px;
+}
+.pnlCalc
+{
+    padding:2px;
+    background-color:#dae5f1;
+    text-align:center;
+    border-spacing:6px;
+    font-size:12px;
+    color:#2d3a68;    
+    font-family:Verdana;
+}
+.pnlCalc td
+{
+    border:1px solid #9fafc1;
+    width:30px;
+}
+.pnlResult
+{
+    background-image:url('../images/bgResult.png');
+    background-repeat: repeat-x;
+    text-align:right;
+    padding-right:5px;
+    padding-top:13px;
+    font-size:32px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+#secondResult td
+{
+    text-align:left;
+    border:0px;
+    padding: 0px 5px;
+    font-size:14px;
+    line-height:.9;
+}
+#secondResult tr:nth-child(even) 
+{
+    color:#a4a09b;
+}
+#secondResult .secondLine
+{
+    text-align:right;
+}
+.pnlCalc td.hex
+{
+    text-align:left;
+    width:60px;
+}
+
+.pnlButtons td
+{
+    background-image:url('../images/bgButton.png');
+    background-repeat: repeat-x;
+    height:21px;
+}
+.pnlButtons td:hover
+{
+    background-image:url('../images/bgButtonHover.png');
+    background-repeat: repeat-x;
+    border:1px solid #f7db34;
+    cursor:pointer;
+}
+.pnlButtons .bgButtonEqual
+{
+    background-image:url('../images/bgButtonEqual.png');
+    background-repeat: repeat-x;
+}
+.pnlButtons .bgButtonEqual:hover
+{
+    background-image:url('../images/bgButtonEqualHover.png');
+    background-repeat: repeat-x;
+}
+.pnlButtons .hex, .pnlButtons .clear
+{
+    background-image:none;
+}
+.pnlButtons .hex:hover, .pnlButtons .clear:hover
+{
+    border:1px solid #9FAFC1;
+    background-image:none;
+    cursor:auto;
+}

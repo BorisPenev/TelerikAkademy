@@ -1,0 +1,27 @@
+линкове към AppHarbor със примерни JSON- и.
+
+get
+http://codejewels-1.apphb.com/api/Jewel/bycategory?category={category}
+http://codejewels-1.apphb.com/api/Jewel/bysource?source={source}
+http://codejewels-1.apphb.com/api/Jewel/getall
+ 
+post
+http://codejewels-1.apphb.com/api/Jewel/addjewel
+{
+  "Id": 10,
+  "Category": {
+    "Id": 10,
+    "Name": "sample2"
+  },
+  "AuthorMail": "sample3",
+  "SourceCode": "sample4"
+}
+
+http://codejewels-1.apphb.com/api/Vote/addvote/{id}
+{
+  "Id": 10,
+  "VoteValue": 2,
+  "AuthorEmail": "sample1"
+}
+
+POST CodeJewel is Forbidden - using Configuration Variable on AppHarbor

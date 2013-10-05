@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="SupermarketModel" namespace="Bellini.Data" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="SupermarketModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="Bellini.Data" default="true">
+      <orm:class name="Vendor" uniqueId="01166588-b1f1-4542-9847-3d8a5277b196">
+        <orm:table name="Vendors" />
+        <orm:identity>
+          <orm:single-field field-name="_iD" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_iD" property="ID" behavior="readwrite" uniqueId="c5c61eb7-a339-4758-a43c-3e4dd8e434db" type="System.Int32">
+          <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vendorName" property="VendorName" behavior="readwrite" uniqueId="319256e5-c398-4d8d-acda-feeedb678505" type="System.String">
+          <orm:column name="Vendor Name" sql-type="nvarchar" nullable="false" length="80" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_products" property="Products" behavior="readwrite" uniqueId="40289f43-698b-4ef4-b742-51310751f0ec" type="Bellini.Data.Product">
+          <orm:collection element-class="Bellini.Data.Product" inverse-field="_vendor" order-by="" uniqueId="f417f842-98ca-4207-ab22-636b1c98712a" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Product" uniqueId="a095278e-d4ba-4277-95c8-17f6012c3d1f">
+        <orm:table name="Products" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_iD" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_iD" property="ID" behavior="readwrite" uniqueId="1d76f147-4fc0-4f08-9a12-72cef15b7b7e" type="System.Int32">
+          <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vendorID" property="VendorID" behavior="readwrite" uniqueId="794db764-235d-4137-836b-0eeb4bcdcc14" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="VendorID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productName" property="ProductName" behavior="readwrite" uniqueId="974bf516-4c4a-4077-9382-8bd2240f5016" type="System.String">
+          <orm:column name="Product Name" sql-type="nvarchar" nullable="false" length="80" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_measureID" property="MeasureID" behavior="readwrite" uniqueId="24c5ad5f-a70d-48eb-b59b-410be946c766" type="System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]">
+          <orm:column name="MeasureID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_basePrice" property="BasePrice" behavior="readwrite" uniqueId="ac33159e-b992-4e52-9a98-fa6ba0c0f363" type="System.Single">
+          <orm:column name="Base Price" sql-type="float" nullable="false" length="0" scale="0" ado-type="Real" />
+        </orm:field>
+        <orm:field name="_vendor" property="Vendor" behavior="readwrite" uniqueId="c92ceee7-6564-423c-9bab-e37db754766a" type="Bellini.Data.Vendor">
+          <orm:reference uniqueId="f417f842-98ca-4207-ab22-636b1c98712a">
+            <orm:sharedfield name="_vendorID" target-class="Bellini.Data.Vendor" target-field="_iD" />
+            <orm:constraint name="Products_ibfk_1" destination-table="Vendors" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_measure" property="Measure" behavior="readwrite" uniqueId="d42f4dfc-894c-4529-806c-469fae968d4f" type="Bellini.Data.Measure">
+          <orm:reference uniqueId="892c45a9-b6cf-44ca-a9ff-59404c855d31">
+            <orm:sharedfield name="_measureID" target-class="Bellini.Data.Measure" target-field="_iD" />
+            <orm:constraint name="Products_ibfk_2" destination-table="Measures" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="MeasureID">
+          <orm:columnMapping>
+            <orm:column name="MeasureID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="VendorID">
+          <orm:columnMapping>
+            <orm:column name="VendorID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+      <orm:class name="Measure" uniqueId="4414d905-d7c5-40f3-a9b1-c01388e31bae">
+        <orm:table name="Measures" />
+        <orm:identity>
+          <orm:single-field field-name="_iD" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_iD" property="ID" behavior="readwrite" uniqueId="7fb8bad4-9d69-43a6-ac9c-f08510c2067c" type="System.Int32">
+          <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_measureName" property="MeasureName" behavior="readwrite" uniqueId="1e65bf65-304b-4419-bc97-434a89179d98" type="System.String">
+          <orm:column name="Measure Name" sql-type="nvarchar" nullable="false" length="30" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_products" property="Products" behavior="readwrite" uniqueId="409b8e48-084e-41f3-95eb-fb6d2ee64c0c" type="Bellini.Data.Product">
+          <orm:collection element-class="Bellini.Data.Product" inverse-field="_measure" order-by="" uniqueId="892c45a9-b6cf-44ca-a9ff-59404c855d31" />
+        </orm:field>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="Vendors">
+        <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="Vendor Name" sql-type="nvarchar" nullable="false" length="80" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="Products">
+        <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="VendorID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Product Name" sql-type="nvarchar" nullable="false" length="80" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="MeasureID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="Base Price" sql-type="float" nullable="false" length="0" scale="0" ado-type="Real" />
+        <orm:index name="MeasureID">
+          <orm:columnMapping>
+            <orm:column name="MeasureID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="VendorID">
+          <orm:columnMapping>
+            <orm:column name="VendorID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:constraint name="Products_ibfk_1" destination-table="Vendors">
+          <orm:column name="VendorID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+        <orm:constraint name="Products_ibfk_2" destination-table="Measures">
+          <orm:column name="MeasureID" sql-type="integer" nullable="true" length="0" scale="0" ado-type="Int32" />
+        </orm:constraint>
+      </orm:table>
+      <orm:table name="Measures">
+        <orm:column name="ID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" ado-type="Int32" />
+        <orm:column name="Measure Name" sql-type="nvarchar" nullable="false" length="30" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Db9ac536f7668248bf9f78a20300872169Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>server=9ac536f7-6682-48bf-9f78-a20300872169.mysql.sequelizer.com;User Id=owcyyduyslgdluwk;password=ojWdHr8RCzfmHCMn8QDR8XTCainBAmKR7YLakCEq3vCEcKynWbiUsmzyxsdzdEqq;Persist Security Info=True;database=db9ac536f7668248bf9f78a20300872169</AppConfigConnectionString>
+    <InitialCatalog>db9ac536f7668248bf9f78a20300872169</InitialCatalog>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="01166588-b1f1-4542-9847-3d8a5277b196" name="Vendor" namespace="Bellini.Data" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="c5c61eb7-a339-4758-a43c-3e4dd8e434db" name="ID" type="Int32" label="ID : Int32" kind="Persistent" identity="true" fieldName="_iD" />
+      <Property Id="319256e5-c398-4d8d-acda-feeedb678505" name="VendorName" label="VendorName : String" kind="Persistent" fieldName="_vendorName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="a9039ada-d2b3-451d-bd19-f0e8ff63e20b">
+          <NavigationalProperty Id="40289f43-698b-4ef4-b742-51310751f0ec" name="Products" type="IList&lt;Product&gt;" label="Products : IList&lt;Product&gt;" nullable="true" kind="Persistent" fieldName="_products" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="a095278e-d4ba-4277-95c8-17f6012c3d1f" name="Product" namespace="Bellini.Data" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="1d76f147-4fc0-4f08-9a12-72cef15b7b7e" name="ID" type="Int32" label="ID : Int32" kind="Persistent" identity="true" fieldName="_iD" />
+      <Property Id="ac33159e-b992-4e52-9a98-fa6ba0c0f363" name="BasePrice" type="Single" label="BasePrice : Single" kind="Persistent" fieldName="_basePrice" />
+      <Property Id="24c5ad5f-a70d-48eb-b59b-410be946c766" name="MeasureID" type="Int32" label="MeasureID : Int32" nullable="true" kind="Persistent" fieldName="_measureID" />
+      <Property Id="974bf516-4c4a-4077-9382-8bd2240f5016" name="ProductName" label="ProductName : String" kind="Persistent" fieldName="_productName" />
+      <Property Id="794db764-235d-4137-836b-0eeb4bcdcc14" name="VendorID" type="Int32" label="VendorID : Int32" nullable="true" kind="Persistent" fieldName="_vendorID" />
+      <AssociationTargets>
+        <Association Id="f417f842-98ca-4207-ab22-636b1c98712a" SourceMultiplicity="ZeroOne" name="ProductHasVendor">
+          <DomainClassMoniker name="/SupermarketModel/Vendor" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="92e735fe-38fa-4420-a1b0-3ee7835aea2b">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Vendor/Products" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="e96f782b-5c1a-454d-bbdb-f0cdbd890282">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Product/Vendor" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="892c45a9-b6cf-44ca-a9ff-59404c855d31" SourceMultiplicity="ZeroOne" name="ProductHasMeasure">
+          <DomainClassMoniker name="/SupermarketModel/Measure" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="cb8a1aff-ee8e-483b-965c-b50c92439a34">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Measure/Products" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="eba5f967-430a-425d-9f9c-95c893c6c841">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Product/Measure" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="42b86c4a-a7b9-4d99-aad7-d486ea28c68b">
+          <NavigationalProperty Id="c92ceee7-6564-423c-9bab-e37db754766a" name="Vendor" type="Vendor" label="Vendor : Vendor" nullable="true" kind="Persistent" fieldName="_vendor" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="f9f0f5ce-672f-475b-9309-723f3a60d1e3">
+          <NavigationalProperty Id="d42f4dfc-894c-4529-806c-469fae968d4f" name="Measure" type="Measure" label="Measure : Measure" nullable="true" kind="Persistent" fieldName="_measure" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="4414d905-d7c5-40f3-a9b1-c01388e31bae" name="Measure" namespace="Bellini.Data" showPropertiesCompartment="true" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="7fb8bad4-9d69-43a6-ac9c-f08510c2067c" name="ID" type="Int32" label="ID : Int32" kind="Persistent" identity="true" fieldName="_iD" />
+      <Property Id="1e65bf65-304b-4419-bc97-434a89179d98" name="MeasureName" label="MeasureName : String" kind="Persistent" fieldName="_measureName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="65e0b5a9-afad-4ab3-b271-f82263016aaf">
+          <NavigationalProperty Id="409b8e48-084e-41f3-95eb-fb6d2ee64c0c" name="Products" type="IList&lt;Product&gt;" label="Products : IList&lt;Product&gt;" nullable="true" kind="Persistent" fieldName="_products" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="e24f5e41-a876-421f-8ca2-d6a5a77dd305">
+      <domainContainer name="SupermarketModel" namespace="Bellini.Data" showPropertiesCompartment="true">
+        <entitySetProperty name="Vendors" namespace="Bellini.Data" type="Vendor" label="Vendors : IQueryable&lt;Bellini.Data.Vendor&gt;" />
+        <entitySetProperty name="Products" namespace="Bellini.Data" type="Product" label="Products : IQueryable&lt;Bellini.Data.Product&gt;" />
+        <entitySetProperty name="Measures" namespace="Bellini.Data" type="Measure" label="Measures : IQueryable&lt;Bellini.Data.Measure&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>
