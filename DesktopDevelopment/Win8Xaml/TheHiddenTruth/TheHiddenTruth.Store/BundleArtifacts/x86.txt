@@ -1,0 +1,2 @@
+MainPackage=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\bin\x86\Release\TheHiddenTruth.Store_1.1.0.8_Bundle\TheHiddenTruth.Store_1.1.0.8_x86.appx
+SymbolPackage=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\AppPackages\TheHiddenTruth.Store_1.1.0.8_Test\TheHiddenTruth.Store_1.1.0.8_x86.appxsym

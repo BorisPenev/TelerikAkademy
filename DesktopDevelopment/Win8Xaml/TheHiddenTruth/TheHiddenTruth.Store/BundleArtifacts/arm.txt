@@ -1,0 +1,4 @@
+MainPackage=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\bin\ARM\Release\TheHiddenTruth.Store_1.1.0.8_Bundle\TheHiddenTruth.Store_1.1.0.8_ARM.appx
+SymbolPackage=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\AppPackages\TheHiddenTruth.Store_1.1.0.8_Test\TheHiddenTruth.Store_1.1.0.8_ARM.appxsym
+ResourcePack=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\bin\ARM\Release\TheHiddenTruth.Store_1.1.0.8_Bundle\TheHiddenTruth.Store_1.1.0.8_scale-140.appx
+ResourcePack=C:\Projects\TelerikAkademy\DesktopDevelopment\Win8Xaml\TheHiddenTruth\TheHiddenTruth.Store\bin\ARM\Release\TheHiddenTruth.Store_1.1.0.8_Bundle\TheHiddenTruth.Store_1.1.0.8_scale-180.appx

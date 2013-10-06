@@ -1,7 +1,9 @@
 ## Subversion
 .svn/
 packages/
-
+AppPackages/
+Resources/
+*.wmv
 #################
 ## Eclipse
 #################
