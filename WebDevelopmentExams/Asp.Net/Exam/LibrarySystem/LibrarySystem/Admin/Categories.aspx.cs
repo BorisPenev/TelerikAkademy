@@ -14,7 +14,7 @@ namespace LibrarySystem.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (grdCategories.Rows.Count == 0)
+            if (!IsPostBack && grdCategories.Rows.Count == 0)
             {
                 CreatePanelVisibility(true);
             }

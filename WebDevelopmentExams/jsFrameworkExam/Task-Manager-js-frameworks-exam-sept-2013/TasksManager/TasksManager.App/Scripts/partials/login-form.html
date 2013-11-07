@@ -1,0 +1,14 @@
+﻿<div class="row">
+    <h1 class="offset6">Login or register</h1>
+    <fieldset class="span3 offset6">
+        <legend>Login or register</legend>
+        <label for="tb-username" class="required">Username</label>
+        <input data-bind="value: username" type="text" id="tb-username" required validationMessage="Please enter a username" />
+        <label for="tb-email">Email</label>
+        <input data-bind="value: email" type="text" id="tb-email" />
+        <label for="tb-password" class="required">Password</label>
+        <input data-bind="value: password" type="text" id="tb-password" required validationMessage="Please enter a password"/><br />
+        <button class="btn btn-primary" data-bind="click: login">Login</button>
+        <button class="btn" data-bind="click: register">Register</button>
+    </fieldset>
+</div>

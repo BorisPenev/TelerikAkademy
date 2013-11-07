@@ -1,0 +1,25 @@
+﻿<div>
+    <fieldset style="width: 80%;">
+        <legend>List: <label data-bind="value: title">Title</label></legend>
+        <div id="lblResultMessage" data-bind="text: resultMsg"></div>
+        
+        <div id="grdTodos" 
+             data-resizable="true"
+             data-role="grid"
+             data-width="80%"
+             data-sortable="true"
+             data-pageable="true"
+             data-height="213"
+             data-selectable="single row"
+             data-bind="source: dataSource">
+        </div>
+
+        <fieldset>
+            <legend>Add ToDo</legend>
+            <label for="tb-text">Text</label>
+            <input data-bind="value: newTodoText" type="text" id="tb-text" />
+            <button class="btn btn-primary" data-bind="click: addTodo">Add ToDo</button>
+        </fieldset>
+    </fieldset>
+</div>
+

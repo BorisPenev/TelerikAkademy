@@ -1,0 +1,13 @@
+﻿@model LibrarySystem.Models.BookViewModel
+
+@{
+    Layout = null;
+}
+
+@(
+ Html.Kendo().DropDownListFor(m => m)
+ .Name("Category")
+     .DataValueField("Id")
+            .DataTextField("Name")
+                    .DataSource(ds => ds.Read("GetAllCommand", "Category"))
+)

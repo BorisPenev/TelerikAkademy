@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Books";
+}
+
+<h2>@ViewBag.Title</h2>
+
+    @(Html.Kendo().Grid<LibrarySystem.Models.BookViewModel>()
+    .Name("grdBooks")
+        .Columns(columns =>
+        {
+            columns.Bound(p => p.Title).ClientTemplate("#=formatLongString(Title)#");
+            columns.Bound(p => p.Author).ClientTemplate("#=formatLongString(Author)#");
+            columns.Bound(p => p.Isbn).ClientTemplate("#=formatLongString(Isbn)#");
+            columns.Bound(p => p.WebSite).ClientTemplate("#=formatLongString(WebSite)#");
+            columns.Bound(p => p.CategoryName).ClientTemplate("#=formatLongString(CategoryName)#");
+            columns.Command(command => { command.Edit(); command.Custom("Delete").Click("deleteCommand"); });
+        })
+        .ToolBar(toolbar => toolbar.Create())
+        .Editable(editable => editable.Mode(GridEditMode.PopUp).TemplateName("_BookCreateEdit").DisplayDeleteConfirmation(false))
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(5)
+            .Events(events => events.Error("error_handler"))
+            .Model(model => model.Id(p => p.Id))
+            .Create(update => update.Action("CreateCommand", "Book").Data("sendAntiForgery"))
+            .Read(read => read.Action("ReadCommand", "Book"))
+            .Update(update => update.Action("UpdateCommand", "Book").Data("sendAntiForgery"))
+            .Destroy(update => update.Action("DestroyCommand", "Book").Data("sendAntiForgery"))
+        )
+)
+
+    <div id="modalWindow">
+    </div>
+
+    @section scripts{
+        <script type="text/javascript">
+            function formatLongString(data) {
+                var cutCount = 10;
+                if (data != null) {
+                    var c = $("<span></span>").text(data);
+                    if (data.length > parseInt(cutCount)) {
+                        data = $(c).html();
+                        return data.substring(0, cutCount - 3) + "...";
+                    }
+                    data = $(c).html();
+                    return data;
+                }
+                return "No Description";
+            };
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function(key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function() {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+            var grid = $("#grdBooks").data("kendoGrid");
+
+            grid.one("dataBinding", function(e) {
+                e.preventDefault(); // cancel grid rebind if error occurs
+            });
+        }
+    }
+
+    function sendAntiForgery() {
+        return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() };
+    }
+
+    var wnd;
+    $(document).ready(function() {
+        wnd = $("#modalWindow").kendoWindow({
+            title: "Delete confirmation",
+            modal: true,
+            visible: false,
+            resizable: false,
+            width: 300
+        }).data("kendoWindow");
+
+        detailsTemplate = kendo.template($("#template").html());
+    });
+
+    function deleteCommand(e) {
+        e.preventDefault();
+
+        var grid = this;
+        var row = $(e.currentTarget).closest("tr");
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        wnd.content(detailsTemplate(dataItem));
+
+        wnd.center().open();
+
+        $("#yes").click(function() {
+            grid.removeRow(row);
+            wnd.close();
+        });
+
+        $("#no").click(function() {
+            wnd.close();
+        });
+    }
+</script>
+
+}
+
+<script type="text/x-kendo-template" id="template">
+    <h2>Delete ?</h2>
+    <div id="details-container">
+        <label class="label label-info mylabel">Title</label><i>#= Title #</i>
+        <br />
+        <div>
+            <button id="yes" class="k-button">Yes</button>
+            <button id="no" class="k-button">No</button>
+        </div>
+    </div>
+</script>

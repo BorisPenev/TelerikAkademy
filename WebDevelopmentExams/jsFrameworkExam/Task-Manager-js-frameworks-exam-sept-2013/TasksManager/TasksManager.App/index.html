@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Student System</title>
+    <script src="Scripts/libs/jquery-2.0.3.js"></script>
+    <script src="Scripts/libs/q.js"></script>
+    <script src="Scripts/libs/kendo.web.min.js"></script>
+    <script src="Scripts/libs/rsvp.min.js"></script>
+    <script src="Scripts/libs/class.js"></script>
+    <script src="Scripts/libs/httpRequester.js"></script>
+    <script src="Scripts/app/dataLayer.js"></script>
+    <script src="Scripts/app/view-models.js"></script>
+    <script src="Scripts/app/views.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
+    <link href="Scripts/styles/bootstrap.css" rel="stylesheet" />
+    <link href="Content/kendo.common.min.css" rel="stylesheet" />
+    <link href="Content/kendo.default.min.css" rel="stylesheet" />
+    <link href="Scripts/partials/SearchResults.css" rel="stylesheet" />
+    <script>
+        $(document).ready(function () {
+            $("#menu").kendoMenu();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="nav nav-tabs">
+            <ul id="navbar" class="nav nav-tabs">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#/login">Login</a></li>
+                <li><a href="#/create-appointment">Create Appointment</a></li>
+                <li><a href="#/appointments">list all appointments</a></li>
+                <li><a href="#/comming-appointments">upcomming appointments </a></li>
+                <li><a href="#/appointments-by-date">appointments By Date</a></li>
+                <li><a href="#/appointments-today">appointments Today</a></li>
+                <li><a href="#/appointments-current">appointments Current</a></li>
+                <li><a href="#/todo-lists">list all Todos</a></li>
+                <li><a href="#/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="app">
+    </div>
+    <footer>
+        <h3 class="text-center">The Footer</h3>
+    </footer>
+</body>
+</html>

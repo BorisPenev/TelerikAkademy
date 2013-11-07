@@ -103,13 +103,14 @@ namespace TheHiddenTruth.Store.UserControls
             openPicker.FileTypeFilter.Add(".png");
 
             var file = await openPicker.PickSingleFileAsync();
-            var falKey = StorageApplicationPermissions.FutureAccessList.Add(file);
-
-            await AssignAvatar(file);
-
-            var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
-            localSettings.Values["avatarLocalFile"] = falKey;
-            localSettings.Values["avatarParseFile"] = null;
+            if (file != null)
+            {
+                var falKey = StorageApplicationPermissions.FutureAccessList.Add(file);
+                await AssignAvatar(file);
+                var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+                localSettings.Values["avatarLocalFile"] = falKey;
+                localSettings.Values["avatarParseFile"] = null;
+            }
         }
 
         private async Task AssignAvatar(StorageFile file)

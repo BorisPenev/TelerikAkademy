@@ -1,0 +1,26 @@
+﻿@using System.Security.Policy
+@model IEnumerable<Exam.Web.Models.TopTicketsViewModel>
+
+@{
+    ViewBag.Title = "Ticket System";  
+}
+
+<div class="row-fluid">
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        var ticket = Model.ElementAt(i);
+        <div class="span4">
+            <h2>@ticket.Title</h2>
+            <strong>Category: </strong> @ticket.CategoryName<br/>
+            <strong>Author: </strong> @ticket.AuthorName<br />
+            @ticket.CommentsCount comment(s)<br />
+            <p><a class="btn" href="@Url.Action("Details", "Ticket", new { ticket.Id })">More Details</a></p>
+        </div>
+
+        if (i > 0 && (i + 1) % 3 == 0)
+        {
+            @:</div>
+            @:<div class="row-fluid">
+        }
+    }
+</div>

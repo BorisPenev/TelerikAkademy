@@ -14,6 +14,11 @@
             <!-- Application-specific resources -->
             <x:String x:Key="AppName">The Hidden Truth</x:String>
 
+            <SolidColorBrush x:Key="ListViewItemSelectedBackgroundThemeBrush" Color="#00b2f0"></SolidColorBrush>
+            <SolidColorBrush x:Key="ListViewItemPointerOverBackgroundThemeBrush" Color="#ffffff"></SolidColorBrush>
+            <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBackgroundThemeBrush" Color="#00b2f0"></SolidColorBrush>
+            <SolidColorBrush x:Key="ListViewItemSelectedPointerOverBorderThemeBrush" Color="#00b2f0"></SolidColorBrush>
+            
             <converters:NullToBooleanConverter x:Name="NullToBooleanConverter"/>
             <converters:BooleanToVisibilityConverter x:Name="BooleanToVisibilityConverter"/>
             

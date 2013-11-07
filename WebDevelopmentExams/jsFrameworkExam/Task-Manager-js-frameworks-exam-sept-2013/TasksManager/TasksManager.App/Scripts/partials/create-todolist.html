@@ -1,0 +1,48 @@
+﻿<div class="row">
+    <fieldset class="span3 offset6">
+        <legend>Create Todo List</legend>
+        <div id="lblResultMessage" data-bind="text: resultMsg"></div>
+        <label for="tb-title">Title</label>
+        <input data-bind="value: newList.title" type="text" id="tb-title" />
+
+        <div id="grid" 
+             data-resizable="true"
+             data-role="grid"
+             data-sortable="true"
+             data-pageable="true"
+             data-height="213"
+             data-bind="source: newList.todos">
+        </div>
+
+        <fieldset>
+            <legend>Add ToDo</legend>
+            <label for="tb-text">Text</label>
+            <input data-bind="value: newTodoText" type="text" id="tb-text" />
+            <button class="btn btn-primary" data-bind="click: addTodo">Add ToDo</button>
+        </fieldset>
+
+        <button class="btn btn-primary" data-bind="click: createList">create List with all todos</button>
+    </fieldset>
+    
+    <div id="grdAllTodos" 
+             data-resizable="true"
+             data-role="grid"
+             data-sortable="true"
+             data-pageable="true"
+             data-height="213"
+             data-bind="source: dtaSource">
+        </div>
+</div>
+<style scoped>
+    #background {
+        width: 254px;
+        height: 250px;
+        margin: 30px auto;
+        padding: 69px 0 0 11px;
+        background: url('/Content/calendar.png') transparent no-repeat 0 0;
+    }
+
+    #calendar {
+        width: 241px;
+    }
+</style>

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using LibrarySystem.Data;
 using LibrarySystem.Models;
 
 namespace LibrarySystem

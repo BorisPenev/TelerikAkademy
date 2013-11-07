@@ -9,7 +9,7 @@ namespace LibrarySystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                "~/Scripts/Kendo/jquery.min.js"));
+                "~/Scripts/jquery-1.8.2.min.js"));
 
             // The Kendo JavaScript bundle
             bundles.Add(new ScriptBundle("~/bundles/kendo").Include(

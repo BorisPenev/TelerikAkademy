@@ -1,0 +1,31 @@
+﻿@using Exam.Web.Models
+
+@{
+    ViewBag.Title = "Category Administration";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@(Html.Kendo()
+    .Grid<CategoryViewModel>()
+    .Name("category-grid")
+    .Pageable()
+    .Sortable()
+    .Editable(edit => edit.Mode(GridEditMode.InLine))
+    .Filterable()
+    .Columns(col =>
+            {
+                col.Bound(m => m.Name);
+                col.Command(com =>
+                            {
+                                com.Edit();
+                                com.Destroy();
+                            }).Title("Commands");
+            })
+    .DataSource(data => data.Ajax()
+        .ServerOperation(true)
+        .PageSize(10)
+        .Model(m => m.Id("Id"))
+        .Read("ReadCommand", "CategoryAdmin")
+        .Update("UpdateCommand", "CategoryAdmin")
+        .Destroy("DestroyCommand", "CategoryAdmin")))

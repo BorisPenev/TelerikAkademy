@@ -15,7 +15,7 @@ namespace LibrarySystem.Admin
         private bool isValidationError = false;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (grdBooks.Rows.Count == 0)
+            if (!IsPostBack && grdBooks.Rows.Count == 0)
             {
                 CreatePanelVisibility(true);
             }

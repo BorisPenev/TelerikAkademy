@@ -1,0 +1,29 @@
+﻿<div class="row">
+    <fieldset class="span3 offset6">
+        <legend>Create Appointments</legend>
+        <div id="lblResultMessage" data-bind="text: resultMsg"></div>
+        <label for="tb-subject">subject</label>
+        <input data-bind="value: subject" type="text" id="tb-subject" />
+        <label for="tb-description">description</label>
+        <input data-bind="value: description" type="text" id="tb-description" />
+
+        <div id="calendar"></div>
+
+        <label for="tb-duration">duration</label>
+        <input data-bind="value: duration" type="text" id="tb-duration" /><br />
+        <button class="btn btn-primary" data-bind="click: create">create</button>
+    </fieldset>
+</div>
+<style scoped>
+    #background {
+        width: 254px;
+        height: 250px;
+        margin: 30px auto;
+        padding: 69px 0 0 11px;
+        background: url('/Content/calendar.png') transparent no-repeat 0 0;
+    }
+
+    #calendar {
+        width: 241px;
+    }
+</style>

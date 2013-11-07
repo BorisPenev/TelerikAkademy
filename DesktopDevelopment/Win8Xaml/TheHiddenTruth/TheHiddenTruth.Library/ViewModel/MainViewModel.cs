@@ -107,19 +107,19 @@ namespace TheHiddenTruth.Library.ViewModel
 
         public async Task LoadData(string pageToken)
         {
-            await _serviceManager.GetDataBlogZaSeriozniHora(pageToken, (model, err) =>
-            {
-                if (err != null)
-                {
-                    System.Diagnostics.Debug.WriteLine(err.ToString());
-                }
-            });
-
             await _serviceManager.GetDataAlterInformation(pageToken.ToInt(1), (model, exception) =>
             {
                 if (exception != null)
                 {
                     System.Diagnostics.Debug.WriteLine(exception.ToString());
+                }
+            });
+
+            await _serviceManager.GetDataBlogZaSeriozniHora(pageToken, (model, err) =>
+            {
+                if (err != null)
+                {
+                    System.Diagnostics.Debug.WriteLine(err.ToString());
                 }
             });
         }

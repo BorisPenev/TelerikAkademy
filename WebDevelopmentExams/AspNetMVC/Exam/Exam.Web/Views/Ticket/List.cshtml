@@ -1,0 +1,120 @@
+﻿@using Exam.Web.Models
+@model System.Linq.IQueryable<Exam.Web.Models.TicketsViewModel>
+
+@{
+    ViewBag.Title = "List Tickets";
+}
+
+<style>
+    .k-listview {
+        background-color: white;
+        color: black;
+        font-weight: bold;
+    }
+    .k-widget {
+        border: 0 black solid;
+    }
+    #header {
+        border: 3px black solid;
+        padding: 5px;
+    }
+</style>
+<h2>List Tickets</h2>
+
+<div class="row-fluid">
+    @using (Html.BeginForm("Search", "Ticket", FormMethod.Post))
+    {
+        <div>
+            Search by Category
+        </div>
+        
+        @(Html.Kendo()
+              .DropDownList()
+              .Name("categorySearch")
+              .DataTextField("Name")
+              .DataValueField("Id")
+              .OptionLabel("All")
+              .DataSource(data =>
+              {
+                  data.Read(read => read.Action("GetAllCategories", "Ticket"));
+                  data.ServerFiltering(true);
+              })
+              .Events(e => e.Change("change")))
+        <br />
+        
+        <div>
+            <input type="submit" value="Search" class="btn" />
+        </div>
+
+    }
+</div>
+
+<br/>
+
+<div id="header">
+    <div class="row-fluid">
+        <h3 class="span2">
+            <span>Title</span>
+        </h3>
+        <h3 class="span2">
+            <span>Category</span>
+        </h3>
+        <h3 class="span2">
+            <span>Author</span>
+        </h3>
+        <h3 class="span2">
+            <span>Priority</span>
+        </h3>
+        <h3 class="span2">
+            <span>Details</span>
+        </h3>
+    </div>
+
+    @(Html.Kendo()
+    .ListView<TicketsViewModel>()
+    .Name("tickets")
+    .TagName("div")
+    .ClientTemplateId("ticket-template")
+    .Pageable()
+    .DataSource(data =>
+    {
+        data.Read("GetTickets", "Ticket");
+        data.ServerOperation(true);
+        data.PageSize(5);
+    }))
+
+</div>
+
+<script id="ticket-template" type="text/x-kendo-template">
+    <div class="row-fluid">
+        <div class="span2">
+            <span>#: Title #</span>
+        </div>
+        <div class="span2">
+            <span>#: CategoryName #</span>
+        </div>
+        <div class="span2">
+            <span>#: AuthorName #</span>
+        </div>
+        <div class="span2">
+            <span>#: PriorityAsString #</span>
+        </div>
+        <div class="span2">
+            <a href="/Ticket/Details/#: Id #">Details</a>
+        </div>
+    </div>
+</script>
+
+
+@section scripts{
+    <script>
+        function change(e) {
+            var list = $("#tickets").data("kendoListView");
+            $filter = new Array();
+            if (e.sender._selectedValue !== "") {
+                $filter.push({ field: "CategoryId", operator: "equals", value: e.sender._selectedValue });
+            }
+            list.dataSource.filter($filter);
+        }
+    </script>
+}

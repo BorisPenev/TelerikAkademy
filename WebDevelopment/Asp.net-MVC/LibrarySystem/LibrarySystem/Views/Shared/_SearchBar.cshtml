@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LibrarySystem.Models.Category>
+
+<script type="text/javascript">
+
+    function onAdditionalData() {
+        var searchText = jQuery('#SearchDropDown').val();
+
+        return {
+            text: jQuery("#SearchAutoComplete").val()
+        };
+    }
+
+    var url;
+    var wnd;
+
+    $('#navbar-submit-button').click(function (e) {
+        var text = $("#SearchAutoComplete").data("kendoAutoComplete").value();
+
+        if (text.length > 100) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#error").css("display", "block")
+                .html("The Search query must be less than 100 characters long!").fadeOut(5000);
+
+            return false;
+        }
+
+        $("#query").val(text);
+    });
+</script>
+
+
+@using(Html.BeginForm("SearchResult", "Search"))
+{
+
+@(Html.Kendo().AutoComplete()
+    .Name("SearchAutoComplete")
+    .DataTextField("Name")
+    .DataSource(source => source.Read(read => read.Action("SearchCommand", "Search")
+                                                    .Data("onAdditionalData"))
+                                .ServerFiltering(true))
+    .MinLength(2)
+    .Height(100).Placeholder("Search...")
+    .Template("<strong>${ data.Title }</strong> <i>(${ data.Author})</i>")
+    .Filter("contains"))
+
+@Html.Hidden("query", new { book = "" });
+
+<button type="submit" class="primary btn" id="navbar-submit-button">
+    <i class="icon-search icon-large"></i>
+</button>
+}

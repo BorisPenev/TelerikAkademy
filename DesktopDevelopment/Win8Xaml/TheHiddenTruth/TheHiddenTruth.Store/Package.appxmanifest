@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="3272Saykor.HiddenTruth" Publisher="CN=5865FF33-7383-4200-8BF5-2664726CA58F" Version="1.1.0.3" />
+  <Identity Name="3272Saykor.HiddenTruth" Publisher="CN=5865FF33-7383-4200-8BF5-2664726CA58F" Version="1.1.0.16" />
   <Properties>
     <DisplayName>The Hidden Truth</DisplayName>
     <PublisherDisplayName>Saykor</PublisherDisplayName>

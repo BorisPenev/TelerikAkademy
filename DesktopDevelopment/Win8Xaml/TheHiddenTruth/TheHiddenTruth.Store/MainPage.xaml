@@ -112,7 +112,7 @@
                                         CommandParameter="{Binding Id}"
                                     Style="{StaticResource TextBlockButtonStyle}" >
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="NoWrap" />
+                                        <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource SubheaderTextBlockStyle}" FontWeight="Bold" TextWrapping="NoWrap" />
                                         <TextBlock Text="{StaticResource ChevronGlyph}" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource SubheaderTextBlockStyle}" TextWrapping="NoWrap" />
                                     </StackPanel>
                                 </Button>

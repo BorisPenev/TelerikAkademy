@@ -1,0 +1,71 @@
+﻿@model LibrarySystem.Models.BookViewModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("UpdateCommand", "Book", FormMethod.Post))
+{
+    <div id="error-grid" class="alert alert-error" style="display:none"></div>
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div>
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Title, "Title")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Title)
+            </div>
+        </div>
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Author, "Author")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Author)
+            </div>
+        </div>
+        
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Description, "Description")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+            </div>
+        </div>
+
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Isbn, "Isbn")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Isbn)
+            </div>
+        </div>
+
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.WebSite, "Web Site")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.WebSite)
+            </div>
+        </div>
+
+        <div class="k-edit-form-container">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CategoryName, "Category")
+
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Category)
+            </div>
+        </div>
+    </div>
+}

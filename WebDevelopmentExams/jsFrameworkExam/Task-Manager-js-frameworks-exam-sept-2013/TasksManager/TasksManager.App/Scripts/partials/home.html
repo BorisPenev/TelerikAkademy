@@ -1,0 +1,13 @@
+﻿<div class="row">
+    <h2 class="text-center">Welcome home</h2>
+    <h3 class="text-center">Latest Videos</h3>
+    <ul class="offset5" data-template="videos-template" data-bind="source: videos">
+    </ul>
+</div>
+
+<script type="text/x-kendo-template" id="videos-template">
+    <li>
+        <a href="#:link#" data-bind="text: title" target="_blank"></a>
+    </li>
+</script>
+//href="tel:#:link#"
